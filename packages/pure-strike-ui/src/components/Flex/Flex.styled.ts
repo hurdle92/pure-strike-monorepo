@@ -8,8 +8,8 @@ export const Flex = styled.div<FlexProps>`
   justify-content: ${({ justify }) => justify};
   align-items: ${({ alignment }) => alignment};
   flex-wrap: ${({ flexWrap }) => flexWrap};
-  gap: ${({ gap }) => gap + "px"};
   overflow: ${({ overflow }) => overflow};
 
+  ${(props) => getResponsiveStyles("gap", props.gap)};
   ${(props) => getResponsiveStyles("flex-direction", props.direction)};
 `;

@@ -28,7 +28,7 @@ interface FlexOptions {
   alignment?: AxisAlignmentType;
   justify?: JustifyContentType;
   flexWrap?: FlexWrapType;
-  gap?: number;
+  gap?: ResponsiveStyleProps;
   onClick?: MouseEventHandler;
 }
 
