@@ -49,17 +49,16 @@ const getBackgroundColor = (backgroundColor) => {
 export const Container = styled.div<StackProps>`
   position: ${({ position }) => position};
 
-  ${(props) => getResponsiveStyles("width", props.width)};
   min-width: ${({ minWidth }) => minWidth && getPixelByType(minWidth)};
-
-  height: ${({ height }) => (height ? getPixelByType(height) : "100%")};
+  ${(props) => getResponsiveStyles("width", props.width)};
+  ${(props) => getResponsiveStyles("height", props.height)};
   min-height: ${({ minHeight }) => minHeight && getPixelByType(minHeight)};
   max-height: ${({ maxHeight }) => maxHeight && getPixelByType(maxHeight)};
 
-  top: ${({ top }) => top && top + "px"};
-  right: ${({ right }) => right && right + "px"};
-  bottom: ${({ bottom }) => bottom && bottom + "px"};
-  left: ${({ left }) => left && left + "px"};
+  ${({ top }) => getResponsiveStyles("top", top)};
+  ${({ right }) => getResponsiveStyles("right", right)};
+  ${({ left }) => getResponsiveStyles("left", left)};
+  ${({ bottom }) => getResponsiveStyles("bottom", bottom)};
 
   ${(props) => getResponsiveStyles("margin", props.margin)};
   ${(props) => getResponsiveStyles("padding", props.padding)};

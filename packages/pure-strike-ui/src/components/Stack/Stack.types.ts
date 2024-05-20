@@ -6,7 +6,7 @@ import {
 } from "~/types/componentProps";
 import { MouseEventHandler } from "~/types/events";
 
-type PositionType = "static" | "aboslute" | "fixed" | "relative" | "sticky";
+type PositionType = "static" | "absolute" | "fixed" | "relative" | "sticky";
 
 interface StackOptions {
   position?: PositionType;
@@ -25,10 +25,10 @@ interface StackOptions {
 }
 
 export interface PositionLocationProps {
-  top?: number;
-  right?: number;
-  bottom?: number;
-  left?: number;
+  top?: ResponsiveStyleProps;
+  right?: ResponsiveStyleProps;
+  bottom?: ResponsiveStyleProps;
+  left?: ResponsiveStyleProps;
 }
 
 export interface BorderProps {
