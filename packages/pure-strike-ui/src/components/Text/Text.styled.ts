@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Typography, TypographyProps } from "~/foundation";
+import { getResponsiveStyles, Typography, TypographyProps } from "~/foundation";
 import { ColorPaletteProps, Palette } from "~/foundation";
 import { TextProps } from "./Text.types";
 import { MarginProps } from "~/types/componentProps";
@@ -40,6 +40,12 @@ export const TextView = styled.p<TextProps>`
     ellipsis && getEllipsisLineStyle(ellipsisLine)};
   word-break: break-all;
   ${({ hover }) => hover && hoverStyle};
+
+  ${({ fontSize }) => fontSize && getResponsiveStyles("font-size", fontSize)};
+  ${({ fontWeight }) =>
+    fontWeight && getResponsiveStyles("font-weight", fontWeight)};
+  ${({ lineHeight }) =>
+    lineHeight && getResponsiveStyles("line-height", lineHeight)};
 `;
 
 export default TextView;

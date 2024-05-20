@@ -6,6 +6,7 @@ import {
   type ComponentBaseProps,
   CursorProps,
   HoverProps,
+  ResponsiveStyleProps,
 } from "~/types/componentProps";
 
 type WhiteSpaceType =
@@ -26,6 +27,9 @@ interface TextOptions {
   align?: TextAlignType;
   ellipsis?: boolean;
   ellipsisLine?: number;
+  fontSize?: ResponsiveStyleProps;
+  fontWeight?: ResponsiveStyleProps;
+  lineHeight?: ResponsiveStyleProps;
 }
 
 export interface TextProps

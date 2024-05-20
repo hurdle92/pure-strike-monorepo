@@ -15,10 +15,11 @@ export const Text = forwardRef(
       whitespace = "normal",
       cursor = "inherit",
       align = "start",
-      ellipsis = false,
-      ellipsisLine = 0,
-      hover = false,
+      fontSize,
+      fontWeight,
+      lineHeight,
       onClick = noop,
+      hover = false,
       children,
       ...rest
     }: TextProps,
@@ -35,10 +36,11 @@ export const Text = forwardRef(
         color={color}
         typo={typo}
         whitespace={whitespace}
-        ellipsis={ellipsis}
-        ellipsisLine={ellipsisLine}
         cursor={cursor}
         align={align}
+        fontSize={fontSize}
+        fontWeight={fontWeight}
+        lineHeight={lineHeight}
         hover={hover}
         onClick={onClick}
       >

@@ -14,7 +14,7 @@ const Text32Bold = css`
 const Text28Bold = css`
   font-size: 28px;
   font-weight: 700;
-  line-height: 1.1;
+  line-height: 1.2;
 `;
 
 const Text24Bold = css`
