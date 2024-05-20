@@ -60,6 +60,9 @@ export const Container = styled.div<StackProps>`
   ${({ left }) => getResponsiveStyles("left", left)};
   ${({ bottom }) => getResponsiveStyles("bottom", bottom)};
 
+  ${(props) => getResponsiveStyles("overflow-x", props.overflowX)};
+  ${(props) => getResponsiveStyles("overflow-y", props.overflowY)};
+
   ${(props) => getResponsiveStyles("margin", props.margin)};
   ${(props) => getResponsiveStyles("padding", props.padding)};
 

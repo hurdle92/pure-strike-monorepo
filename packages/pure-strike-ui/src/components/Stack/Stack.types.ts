@@ -8,6 +8,15 @@ import { MouseEventHandler } from "~/types/events";
 
 type PositionType = "static" | "absolute" | "fixed" | "relative" | "sticky";
 
+export type OverflowType =
+  | "visible"
+  | "hidden"
+  | "scroll"
+  | "auto"
+  | "inherit"
+  | "initial"
+  | "clip";
+
 interface StackOptions {
   position?: PositionType;
   width?: ResponsiveStyleProps;
@@ -21,6 +30,8 @@ interface StackOptions {
   backgroundColor?: ColorPaletteProps;
   zIndex?: ZIndex;
   borderRadius?: number | string;
+  overflowX?: ResponsiveStyleProps<OverflowType>;
+  overflowY?: ResponsiveStyleProps<OverflowType>;
   onClick?: MouseEventHandler;
 }
 

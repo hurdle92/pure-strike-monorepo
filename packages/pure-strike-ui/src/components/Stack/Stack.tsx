@@ -23,6 +23,8 @@ export const Stack = forwardRef(
       backgroundColor = "transparent",
       zIndex = ZIndex.Auto,
       borderRadius = 0,
+      overflowX = "visible",
+      overflowY = "visible",
       onClick = noop,
       children,
       ...rest
@@ -47,6 +49,8 @@ export const Stack = forwardRef(
         backgroundColor={backgroundColor}
         zIndex={zIndex}
         borderRadius={borderRadius}
+        overflowX={overflowX}
+        overflowY={overflowY}
         onClick={onClick}
         {...rest}
       >
