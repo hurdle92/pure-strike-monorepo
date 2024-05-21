@@ -33,12 +33,21 @@ const getBorderStyle = ({
     return Palette[borderColor];
   };
 
+  // NOTE : 하나라도 true 속성으로 내려주지 않으면 전체 border style로 판단
+  const isBorderAll = [borderTop, borderRight, borderBottom, borderLeft].every(
+    (item) => !item
+  );
+
   return css`
     border-width: ${borderWidth}px;
     border-color: ${getBorderColor(borderColor)};
     box-sizing: border-box;
-    border-style: ${getBorderStyle(borderTop)} ${getBorderStyle(borderRight)}
-      ${getBorderStyle(borderBottom)} ${getBorderStyle(borderLeft)};
+    border-style: ${isBorderAll
+      ? "solid"
+      : `${getBorderStyle(borderTop)} 
+         ${getBorderStyle(borderRight)}
+         ${getBorderStyle(borderBottom)} 
+         ${getBorderStyle(borderLeft)}`};
   `;
 };
 

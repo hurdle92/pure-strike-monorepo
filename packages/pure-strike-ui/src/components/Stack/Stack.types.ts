@@ -43,7 +43,8 @@ export interface PositionLocationProps {
 }
 
 export interface BorderProps {
-  borderWidth?: number;
+  borderWidth?: ResponsiveStyleProps;
+  borderAll?: boolean;
   borderTop?: boolean;
   borderRight?: boolean;
   borderBottom?: boolean;
