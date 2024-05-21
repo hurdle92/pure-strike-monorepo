@@ -18,6 +18,7 @@ export const InfiniteScrollTemplate = ({
         onChange={(inView) => {
           inView && nextPage();
         }}
+        style={{ height: "10px" }}
       />
     </React.Fragment>
   );
