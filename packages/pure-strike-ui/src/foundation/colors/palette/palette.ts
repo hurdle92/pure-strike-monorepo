@@ -34,6 +34,7 @@ const GrayPalette = {
 };
 
 const BluePalette = {
+  "blue-primary": "#2454f8",
   "blue-700": "#3182f6",
 };
 
@@ -65,7 +66,7 @@ const TransparentPalett = {
 
 // NOTE : border 색상 정리가 필요
 const BorderColorPalett = {
-  "border-gray": "#eeeeee",
+  "border-gray": "#e1e1e1",
 };
 
 export const Palette = {
