@@ -47,6 +47,12 @@ const Text20Regular = css`
   line-height: 1.5;
 `;
 
+const Text18Bold = css`
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+`;
+
 const Text18Regular = css`
   font-size: 18px;
   font-weight: 400;
@@ -101,6 +107,12 @@ const Text12Regular = css`
   line-height: 1.36;
 `;
 
+const Text10Bold = css`
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+`;
+
 export const Typography = {
   Text48Black,
   Text32Bold,
@@ -110,6 +122,7 @@ export const Typography = {
   Text20Bold,
   Text20Medium,
   Text20Regular,
+  Text18Bold,
   Text18Regular,
   Text16Bold,
   Text16Medium,
@@ -119,6 +132,7 @@ export const Typography = {
   Text14Regular,
   Text12Bold,
   Text12Regular,
+  Text10Bold,
 };
 
 // NOTE : 키값으로 type 생성
