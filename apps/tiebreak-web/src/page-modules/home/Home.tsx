@@ -1,19 +1,17 @@
 import dynamic from "next/dynamic";
-import Link from "next/link";
-import { Flex, Image, Responsive, Spacer, Stack, Text } from "pure-strike-ui";
+import { Flex, Responsive, Stack } from "pure-strike-ui";
+import { CourtsList } from "./components/courtsList/CourtsList";
 
-const Aside = dynamic(
-  () => import("src/page-modules/home/components/Aside/Aside"),
-  {
-    ssr: false,
-  }
-);
+const Aside = dynamic(() => import("src/components/aside/Aside"), {
+  ssr: false,
+});
 
 const Home = () => {
   return (
     <Stack>
       <Flex justify={"center"}>
         <Responsive desktopComponent={<Aside />} />
+        <CourtsList />
       </Flex>
     </Stack>
   );
