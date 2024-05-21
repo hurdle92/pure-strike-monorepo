@@ -10,6 +10,7 @@ export const Image = forwardRef(
       width,
       height,
       borderRadius = "0px",
+      cursor = "inherit",
       objectFit = "contain",
       alt,
       onClick = noop,
@@ -26,6 +27,7 @@ export const Image = forwardRef(
         src={src}
         width={width}
         height={height}
+        cursor={cursor}
         objectFit={objectFit}
         borderRadius={borderRadius}
         alt={alt}

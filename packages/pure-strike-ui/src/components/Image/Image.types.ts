@@ -1,5 +1,6 @@
 import {
   ComponentBaseProps,
+  CursorProps,
   MarginProps,
   ResponsiveStyleProps,
 } from "~/types/componentProps";
@@ -26,4 +27,5 @@ export interface ImageOptions {
 export interface ImageProps
   extends ComponentBaseProps,
     MarginProps,
+    CursorProps,
     ImageOptions {}
