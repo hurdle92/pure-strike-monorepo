@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Stack, Text, Image, Spacer, Divider, Flex } from "pure-strike-ui";
 import { CourtItemInterface } from "src/types/courts";
-import { FeatureItem } from "./components/FeatureChip";
+import { FeatureChip } from "./components/FeatureChip";
 
 export const CourtsItem = ({ item }: { item: CourtItemInterface }) => {
   const {
@@ -31,9 +31,9 @@ export const CourtsItem = ({ item }: { item: CourtItemInterface }) => {
         </Text>
         <Spacer height={"4px"} />
         <Flex gap={"8px"}>
-          {isOnlineReservation && <FeatureItem feature={"온라인 예약"} />}
-          {isIndoor && <FeatureItem feature={"실내코트"} />}
-          {isShower && <FeatureItem feature={"샤워시설"} />}
+          {isOnlineReservation && <FeatureChip feature={"온라인 예약"} />}
+          {isIndoor && <FeatureChip feature={"실내코트"} />}
+          {isShower && <FeatureChip feature={"샤워시설"} />}
         </Flex>
         <Spacer height={"16px"} />
         <Divider width={"100%"} height={"1px"} color={"border-gray"} />
