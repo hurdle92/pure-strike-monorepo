@@ -1,8 +1,8 @@
 <img src="https://i.imgur.com/X3zXFla.png"/>
 
-# PURE STRIKE FRONTEND MONOREPO
+# PURE-STRIKE Frontend Monorepo
 
-Pure-Strike Monorepo built with Turborepo, React, Next.js and more.
+🖥️ Pure-Strike Monorepo built with Turborepo, React, Next.js, React-Query, Zustand and so on.
 
 <br/>
 
