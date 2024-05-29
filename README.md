@@ -2,14 +2,21 @@
 
 # PURE STRIKE FRONTEND MONOREPO
 
-## Introduction
+Pure-Strike Monorepo built with Turborepo, React, Next.js and more.
 
-🖥️ Turborepo Monorepo for Pure-Strike Frontend
+<br/>
+
+# About The Project
+
+- **Tiebreak-web** : 테니스장 정보앱 타이브레이크의 Web 버전 입니다.<br/>
+explan
+
+
 
 <br/>
 
 
-## Tech Stacks
+# Tech Stacks
 
 - React
 - Turborepo
@@ -21,7 +28,7 @@
 
 <br/>
 
-## Project Structure
+# Project Structure
 
 <br/>
 
