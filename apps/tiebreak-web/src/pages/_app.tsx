@@ -11,6 +11,8 @@ import { StyleSheetManager } from "styled-components";
 import isPropValid from "@emotion/is-prop-valid";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GlobalStyle } from "src/styles/globals";
+import { DEFAULT_SEO } from "src/constants/seo";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -42,7 +44,7 @@ export default function App({ Component, pageProps }: AppProps) {
             `,
         }}
       />
-      {/*  */}
+      {seoData ? <NextSeo {...seoData} /> : <NextSeo {...DEFAULT_SEO} />}
       <StyleSheetManager
         enableVendorPrefixes
         shouldForwardProp={(propName, elementToBeRendered) => {
