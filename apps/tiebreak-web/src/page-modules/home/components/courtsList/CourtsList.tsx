@@ -2,11 +2,11 @@ import { useInfiniteQuery } from "@tanstack/react-query";
 import { Flex, Grid, Stack, TechCard } from "pure-strike-ui";
 import React from "react";
 import { InfiniteScrollTemplate } from "src/components/infinite/InfiniteScrollTemplate";
-import { Loading } from "src/components/loading/Loading";
 import { PER_PAGE } from "src/constants/page";
 import { supabase } from "src/utils/apis/supabase/supabase";
 import { CourtItemInterface } from "src/types/courts";
 import { CourtsItem } from "../courtsItem/CourtsItem";
+import { CourtsListSkeleton } from "../skeleton/CourtsListSkeleton";
 
 export const CourtsList = () => {
   const { data, fetchNextPage, isFetching } = useInfiniteQuery({
@@ -15,6 +15,7 @@ export const CourtsList = () => {
       return supabase
         .from("courts")
         .select("*")
+        .eq("isUse", true)
         .order("priority", { ascending: false })
         .limit(30)
         .range(pageParam * PER_PAGE, (pageParam + 1) * PER_PAGE - 1);
@@ -53,7 +54,7 @@ export const CourtsList = () => {
           })}
         </Flex>
       </InfiniteScrollTemplate>
-      {isFetching && <Loading />}
+      {isFetching && <CourtsListSkeleton />}
     </Stack>
   );
 };
