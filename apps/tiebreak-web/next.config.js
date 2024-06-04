@@ -9,6 +9,10 @@ module.exports = {
         protocol: "https",
         hostname: "mblogthumb-phinf.pstatic.net",
       },
+      {
+        protocol: "https",
+        hostname: "gsqubspdsrnvkpdpmbyg.supabase.co",
+      },
     ],
   },
 
