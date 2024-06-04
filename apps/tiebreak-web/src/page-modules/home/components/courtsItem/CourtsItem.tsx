@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Stack, Text, Image, Spacer, Divider, Flex } from "pure-strike-ui";
+import { Stack, Text, Spacer, Divider, Flex } from "pure-strike-ui";
+import { Img } from "src/components/img";
 import { CourtItemInterface } from "src/types/courts";
 import { FeatureChip } from "./components/FeatureChip";
 
@@ -15,14 +16,14 @@ export const CourtsItem = ({ item }: { item: CourtItemInterface }) => {
   } = item;
   return (
     <Stack padding={"16px 16px 0 16px"}>
-      <Image
+      <Img
         src={thumbnail}
+        isOrigin={true}
         width={"100%"}
         height={"200px"}
         borderRadius={"8px"}
-        objectFit={"cover"}
       />
-      <Spacer height={"8px"} />
+      <Spacer height={"12px"} />
       <Text typo={"Text18Bold"}>{koName}</Text>
       <Spacer height={"2px"} />
       <Text typo={"Text14Regular"} color={"gray-500"}>

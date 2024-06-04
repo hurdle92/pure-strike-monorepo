@@ -1,4 +1,17 @@
 module.exports = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "supzxhsocoxyxyfszruz.supabase.co",
+      },
+      {
+        protocol: "https",
+        hostname: "mblogthumb-phinf.pstatic.net",
+      },
+    ],
+  },
+
   reactStrictMode: true,
   transpilePackages: ["ui"],
   compiler: {
