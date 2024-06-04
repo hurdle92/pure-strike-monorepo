@@ -4,10 +4,10 @@ export const DEFAULT_SEO = {
   description: "내 손안의 테니스장, 타이브레이크",
   keyword:
     "타이브레이크, 테니스, 테니스장, 테니스 매칭, 테니스 레슨, 테니스 커뮤니티",
-  canonical: "https://www.adotonenglish.com/student/index",
+  canonical: "https://tiebreak.vercel.app",
   openGraph: {
     type: "website",
-    url: "https://www.adotonenglish.com/student/index",
+    url: "https://tiebreak.vercel.app",
     title: "타이브레이크",
     description: "내 손안의 테니스장, 타이브레이크",
     article: {
