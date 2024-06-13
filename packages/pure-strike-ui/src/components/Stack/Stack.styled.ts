@@ -56,6 +56,7 @@ const getBackgroundColor = (backgroundColor) => {
 };
 
 export const Container = styled.div<StackProps>`
+  ${(props) => getResponsiveStyles("display", props.display)};
   position: ${({ position }) => position};
 
   min-width: ${({ minWidth }) => minWidth && getPixelByType(minWidth)};
