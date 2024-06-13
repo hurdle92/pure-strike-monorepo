@@ -1,4 +1,6 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -9,9 +11,12 @@ module.exports = {
         protocol: "https",
         hostname: "mblogthumb-phinf.pstatic.net",
       },
+      {
+        protocol: "https",
+        hostname: "gsqubspdsrnvkpdpmbyg.supabase.co",
+      },
     ],
   },
-
   reactStrictMode: true,
   transpilePackages: ["ui"],
   compiler: {
@@ -25,3 +30,5 @@ module.exports = {
     return config;
   },
 };
+
+export default nextConfig;
