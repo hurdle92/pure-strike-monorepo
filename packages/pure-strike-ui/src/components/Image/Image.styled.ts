@@ -3,6 +3,7 @@ import { ImageProps } from "./Image.types";
 import { getResponsiveStyles } from "~/foundation/responsive";
 
 const Image = styled.img<ImageProps>`
+  display: block;
   cursor: ${({ cursor }) => cursor};
   object-fit: ${({ objectFit }) => objectFit};
   ${(props) => getResponsiveStyles("width", props.width)};

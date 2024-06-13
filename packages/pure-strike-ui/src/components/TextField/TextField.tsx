@@ -2,31 +2,40 @@ import React, { forwardRef } from "react";
 import * as Styled from "./TextField.styled";
 import { TextFieldProps } from "./TextField.types";
 import { Text } from "../Text/Text";
-import { Icon } from "../Icon";
-import { IconSize } from "../Icon/Icon.types";
 import { useController } from "react-hook-form";
+import { noop } from "~/utils/funtionUtils";
+import { Image } from "../Image";
+import { Stack } from "../Stack";
 
 export const TextField = forwardRef(
   (
     {
-      name,
       type = "text",
       label,
       isAllowClear = false,
+      onClick = noop,
+      onChange,
+      onPressEnter = noop,
+      rightContent,
       placeholder,
       control,
+      controlKey,
       isError,
       errMessage,
       disabled,
+      multipleValidations,
+      style,
       ...rest
     }: TextFieldProps,
     forwardRef
   ) => {
+    const name = controlKey;
     const {
-      field: { value, onChange },
+      field: { value, onChange: onChangeController },
     } = useController({ name, control });
     const ref = React.useRef<any>(null);
     const [isFocused, setIsFocused] = React.useState(false);
+
     const handleFocus = React.useCallback(
       (event: React.FocusEvent<HTMLInputElement>) => {
         setIsFocused(true);
@@ -62,31 +71,46 @@ export const TextField = forwardRef(
 
     // NOTE : control value 초기화, 내부 포커스는 유지
     const onClickReset = React.useCallback(() => {
-      onChange("");
+      onChangeController("");
       ref.current?.focus();
     }, [value, ref]);
+
+    const activeEnter = (e: any) => {
+      switch (e.key) {
+        case "Enter":
+          return onPressEnter();
+      }
+    };
 
     const ClearComponent = React.useMemo<React.ReactNode>(() => {
       if (isValueAvaiable) {
         return (
-          <div></div>
-          // <Icon
-          //   source={CloseIcon}
-          //   size={IconSize.Size20}
-          //   onClick={onClickReset}
-          // />
+          <Stack position={"absolute"} right={"16px"}>
+            <Image
+              src={`${process.env.NEXT_PUBLIC_IMG_URL}/icons/close.svg`}
+              cursor={"pointer"}
+              onClick={onClickReset}
+              width={"24px"}
+            />
+          </Stack>
         );
       }
     }, [isValueAvaiable]);
 
+    const RightContent = React.useMemo(() => {
+      if (rightContent) {
+        return rightContent;
+      }
+    }, [rightContent]);
+
     return (
-      <Styled.Wrapper isError={isError} disabled={disabled}>
-        {isShowLabel && (
-          <Styled.Label>
-            <Text typo={"Text14Bold"}>{label}</Text>
-          </Styled.Label>
-        )}
-        <Styled.Container>
+      <Styled.Wrapper onClick={onClick} style={style} {...rest}>
+        <Styled.Container isError={isError}>
+          {isShowLabel && (
+            <Styled.Label>
+              <Text fontSize={"10px"}>{label}</Text>
+            </Styled.Label>
+          )}
           <Styled.Input
             ref={ref}
             type={type}
@@ -94,10 +118,17 @@ export const TextField = forwardRef(
             onFocus={handleFocus}
             onBlur={handleBlur}
             value={value}
-            onChange={onChange}
+            onChange={onChange ? onChange : onChangeController}
+            onKeyDown={activeEnter}
           />
           {isAllowClear && ClearComponent}
+          {RightContent}
         </Styled.Container>
+        {errMessage && (
+          <Styled.ErrorMessage color={"red-500"}>
+            {errMessage}
+          </Styled.ErrorMessage>
+        )}
       </Styled.Wrapper>
     );
   }

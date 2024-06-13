@@ -1,4 +1,6 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+
+const nextConfig = {
   images: {
     remotePatterns: [
       {
@@ -15,7 +17,6 @@ module.exports = {
       },
     ],
   },
-
   reactStrictMode: true,
   transpilePackages: ["ui"],
   compiler: {
@@ -29,3 +30,5 @@ module.exports = {
     return config;
   },
 };
+
+export default nextConfig;

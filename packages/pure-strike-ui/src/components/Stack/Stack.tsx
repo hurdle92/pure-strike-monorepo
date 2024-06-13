@@ -7,6 +7,7 @@ import { ZIndex } from "~/foundation";
 export const Stack = forwardRef(
   (
     {
+      display = "block",
       position,
       top,
       width,
@@ -25,6 +26,7 @@ export const Stack = forwardRef(
       borderRadius = 0,
       overflowX = "visible",
       overflowY = "visible",
+
       onClick = noop,
       children,
       ...rest
@@ -33,6 +35,7 @@ export const Stack = forwardRef(
   ) => {
     return (
       <Styled.Container
+        display={display}
         position={position}
         top={top}
         width={width}

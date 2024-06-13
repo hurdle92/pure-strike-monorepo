@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <Stack>
       <Flex justify={"center"}>
-        <Responsive desktopComponent={<Aside />} />
+        <Aside />
         <CourtsList />
       </Flex>
     </Stack>

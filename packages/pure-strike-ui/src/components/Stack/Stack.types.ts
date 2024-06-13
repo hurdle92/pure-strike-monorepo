@@ -6,6 +6,8 @@ import {
 } from "~/types/componentProps";
 import { MouseEventHandler } from "~/types/events";
 
+type DisplayType = "block" | "inline-block" | "none" | "flex" | "grid";
+
 type PositionType = "static" | "absolute" | "fixed" | "relative" | "sticky";
 
 export type OverflowType =
@@ -18,6 +20,7 @@ export type OverflowType =
   | "clip";
 
 interface StackOptions {
+  display?: ResponsiveStyleProps<DisplayType>;
   position?: PositionType;
   width?: ResponsiveStyleProps;
   margin?: ResponsiveStyleProps;
