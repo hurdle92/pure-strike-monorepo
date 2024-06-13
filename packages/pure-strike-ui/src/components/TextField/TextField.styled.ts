@@ -1,42 +1,38 @@
 import styled, { css } from "styled-components";
 import { TextFieldStyledProps } from "./TextField.types";
+import { Palette } from "~/foundation";
+import { Text } from "../Text/Text";
 
 // NOTE : field error 공통 스타일
 export const erroredWrapperBorderStyle = css`
-  border: 1px solid #ec5339;
-  & > span {
-    color: #ec5339;
+  border: 1px solid ${Palette["status-error"]};
+  span {
+    color: ${Palette["status-error"]};
   }
 `;
 
 // NOTE : field disabled 공통 스타일
 export const disabledWrapperBorderStyle = css`
-  border: 1px solid #c4c4c4;
-  color: #c4c4c4;
+  border: 1px solid ${Palette["gray-400"]};
+  color: ${Palette["gray-400"]};
   & > span {
-    color: #c4c4c4;
+    color: ${Palette["gray-400"]};
   }
 `;
 
-export const Wrapper = styled.div<TextFieldStyledProps>`
-  height: 56px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #7e7e7e;
-  box-sizing: border-box;
-  border-radius: 8px;
+export const Wrapper = styled.div``;
+
+export const Container = styled.div<TextFieldStyledProps>`
   position: relative;
-  ${({ isError }) => isError && erroredWrapperBorderStyle}
-
-  ${({ isError }) => isError && erroredWrapperBorderStyle}
-`;
-
-export const Container = styled.div`
-  padding: 16px;
   display: flex;
   width: 100%;
+  height: 52px;
+  border: 1px solid ${Palette["gray-400"]};
+  box-sizing: border-box;
   align-items: center;
+  border: none;
+
+  ${({ isError }) => isError && erroredWrapperBorderStyle}
 `;
 
 export const Label = styled.span`
@@ -50,8 +46,25 @@ export const Label = styled.span`
 export const Input = styled.input`
   width: 100%;
   border: none;
+  font-size: 16px;
+  padding: 16px;
+  border-radius: 6px;
+  background-color: white;
+  border: 1px solid ${Palette["gray-400"]};
+
   &::placeholder {
-    font-weight: 500;
-    color: #c4c4c4;
+    font-weight: 400;
+    color: ${Palette["gray-400"]};
+    font-size: 16px;
   }
+  &:focus {
+    border-color: ${Palette["blue-primary"]};
+  }
+  &:hover {
+    border-color: ${Palette["blue-primary"]};
+  }
+`;
+export const ErrorMessage = styled(Text)`
+  font-size: 12px;
+  padding: 8px 0 0 12px;
 `;
