@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { Flex, Grid, Stack, TechCard } from "pure-strike-ui";
+import { Flex, Stack } from "pure-strike-ui";
 import React from "react";
 import { InfiniteScrollTemplate } from "src/components/infinite/InfiniteScrollTemplate";
 import { PER_PAGE } from "src/constants/page";
@@ -38,8 +38,6 @@ export const CourtsList = () => {
   return (
     <Stack
       width={"420px"}
-      maxHeight={"100vh"}
-      overflowY={"scroll"}
       backgroundColor={"white"}
       borderWidth={"1px"}
       borderColor={"border-gray"}
