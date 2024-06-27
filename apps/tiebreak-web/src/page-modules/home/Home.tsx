@@ -1,20 +1,7 @@
-import dynamic from "next/dynamic";
-import { Flex, Responsive, Stack } from "pure-strike-ui";
-import { CourtsList } from "./components/courtsList/CourtsList";
-
-const Aside = dynamic(() => import("src/components/aside/Aside"), {
-  ssr: false,
-});
+import { CourtsList } from "../courts/list/CourtsList";
 
 const Home = () => {
-  return (
-    <Stack>
-      <Flex justify={"center"}>
-        <Aside />
-        <CourtsList />
-      </Flex>
-    </Stack>
-  );
+  return <CourtsList />;
 };
 
 export default Home;
