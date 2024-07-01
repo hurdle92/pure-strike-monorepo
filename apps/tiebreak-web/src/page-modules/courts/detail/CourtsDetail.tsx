@@ -1,16 +1,33 @@
-import { useRouter } from "next/router";
-import { Stack } from "pure-strike-ui";
+import { Flex, Spacer, Stack, Text } from "pure-strike-ui";
+import { Suspense } from "react";
+import { useGetCourtsDetail } from "src/apis/courts/queries";
+import { Img } from "src/components/img";
 
-export const CourtsDetail = () => {
-  const {
-    query: { id },
-  } = useRouter();
+export const CourtsDetail = ({ id }: { id: string }) => {
+  const { data, isFetching } = useGetCourtsDetail(id);
+
   return (
-    <Stack
-      minWidth={"420px"}
-      backgroundColor={"white"}
-      borderWidth={"1px"}
-      borderColor={"border-gray"}
-    ></Stack>
+    <Suspense
+      fallback={<div style={{ minWidth: "420px", maxWidth: "420px" }} />}
+    >
+      <Stack
+        minWidth={"420px"}
+        maxWidth={"420px"}
+        backgroundColor={"white"}
+        borderWidth={"1px"}
+        borderColor={"border-gray"}
+      >
+        <Img src={data.thumbnail} width={"420px"} height={"280px"} />
+        <Stack padding={"16px"}>
+          <Text fontSize={"24px"} fontWeight={"700"}>
+            {data.koName}
+          </Text>
+          <Spacer height={"16px"} />
+          <Flex>
+            <Text>{data.address}</Text>
+          </Flex>
+        </Stack>
+      </Stack>
+    </Suspense>
   );
 };
