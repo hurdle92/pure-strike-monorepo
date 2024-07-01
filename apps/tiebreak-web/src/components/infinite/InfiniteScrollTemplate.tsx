@@ -6,15 +6,15 @@ export const InfiniteScrollTemplate = ({
   children,
   nextPage,
   isLoading,
-  fallbackUI,
+  fallback,
 }: {
-  children: JSX.Element;
+  children: React.ReactElement | React.ReactElement[];
   queryKey?: string;
   currentCount: number;
   totalCount?: number;
   nextPage: () => void;
   isLoading?: boolean;
-  fallbackUI?: JSX.Element;
+  fallback?: React.ReactElement;
 }) => {
   return (
     <Stack>
@@ -24,7 +24,7 @@ export const InfiniteScrollTemplate = ({
           inView && nextPage();
         }}
       />
-      {isLoading && fallbackUI}
+      {isLoading && fallback}
     </Stack>
   );
 };
