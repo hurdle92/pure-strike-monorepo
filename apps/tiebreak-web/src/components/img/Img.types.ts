@@ -1,10 +1,10 @@
 export interface ImgProps {
   alt?: string;
-  src: string;
-  isOrigin: boolean;
+  src?: string;
+  isOrigin?: boolean;
   width: string;
   height: string;
-  borderRadius: string;
+  borderRadius?: string;
 }
 
 export interface ImgStyledProps

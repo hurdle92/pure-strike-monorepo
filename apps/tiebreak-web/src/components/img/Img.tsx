@@ -5,9 +5,9 @@ import { ImgProps } from "./Img.types";
 
 export const Img = ({
   alt = "alternative_img",
-  src,
-  isOrigin,
-  width,
+  src = "",
+  isOrigin = false,
+  width = "100%",
   height,
   borderRadius,
 }: ImgProps) => {
@@ -20,7 +20,6 @@ export const Img = ({
         height={0}
         sizes={"100vw"}
         style={{ width: "100%", height: "100%" }}
-        priority={true}
         placeholder={"blur"}
         blurDataURL={BLUR_IMG_URL}
       />
