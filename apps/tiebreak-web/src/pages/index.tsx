@@ -1,12 +1,13 @@
-import dynamic from "next/dynamic";
 import React from "react";
-
-const Home = dynamic(() => import("src/page-modules/home/Home"), {
-  ssr: false,
-});
+import Layout from "src/components/layout/Layout";
+import Home from "src/page-modules/home/Home";
 
 const HomePage = () => {
-  return <Home />;
+  return (
+    <Layout>
+      <Home />
+    </Layout>
+  );
 };
 
 export default HomePage;

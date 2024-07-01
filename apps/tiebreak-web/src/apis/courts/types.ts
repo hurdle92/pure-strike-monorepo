@@ -1,0 +1,30 @@
+export interface CourtsDetailInterface {
+  address: string;
+  city: string;
+  courtPrice: string;
+  courtType: string;
+  created_at: string;
+  description: string;
+  district: string;
+  id: number;
+  instagram: string;
+  isIndoor: boolean;
+  isOnlineReservation: boolean;
+  isParking: boolean;
+  isRacketString: boolean;
+  isShower: boolean;
+  isStore: boolean;
+  isUse: boolean;
+  koName: string;
+  lat: number;
+  lng: number;
+  name: string;
+  naverLink: string;
+  numberOfCourts: string;
+  operationTime: string;
+  phoneNumber: string;
+  priority: number;
+  reservationLink: string;
+  thumbnail: string;
+  topics: number;
+}

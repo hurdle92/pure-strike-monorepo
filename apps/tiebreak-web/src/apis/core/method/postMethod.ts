@@ -1,32 +1,34 @@
 import { AxiosResponse } from "axios";
-import instance from "../config/requestConfig";
+import instance from "../instance";
 
-// NOTE :  patch method 처리 구현부
-export const patchMethod =
+// NOTE :  post method 처리 구현부
+export const postMethod =
   <TOptions>({
     url,
     body,
-    option,
+    options,
+    onError,
     isOrigin = false,
   }: {
     url: string;
     body?: any;
-    option?: TOptions;
+    options?: TOptions;
+    onError?: () => void;
     isOrigin?: boolean;
   }) =>
   async (mapper?: (data: AxiosResponse["data"]) => void) => {
     const axiosConfig = instance;
     const baseUrl = process.env.NEXT_PUBLIC_API_URL;
-    const apiKey = `&apikey=${process.env.NEXT_PUBLIC_API_KEY}`;
     try {
       const response = await axiosConfig({
-        method: "patch",
-        url: `${baseUrl}${url}${apiKey}`,
+        method: "post",
+        url: isOrigin ? url : `${baseUrl}${url}`,
         data: body,
-        ...option,
+        ...options,
       });
       return mapper ? mapper(response.data) : response.data;
     } catch (err) {
       console.warn(err);
+      onError && onError();
     }
   };

@@ -13,11 +13,12 @@ const defaultHeaders = {
 
 // NOTE : 요청 인스턴스
 const instance = axios.create({
+  withCredentials: true,
   headers: defaultHeaders,
 });
 
 // TODO : api 요청시 heaader config 변경사항 있을경우 적용
-axios.interceptors.request.use(
+instance.interceptors.request.use(
   async (config) => {
     return config;
   },
@@ -27,12 +28,11 @@ axios.interceptors.request.use(
   }
 );
 
-axios.interceptors.response.use(
+instance.interceptors.response.use(
   (response) => {
     return response;
   },
   (error) => {
-    //TODO: 에러 핸들러 만들어야 함
     throw error;
   }
 );

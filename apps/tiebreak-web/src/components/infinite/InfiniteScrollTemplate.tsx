@@ -1,25 +1,30 @@
+import { Stack } from "pure-strike-ui";
 import React from "react";
 import { InView } from "react-intersection-observer";
 
 export const InfiniteScrollTemplate = ({
   children,
   nextPage,
+  isLoading,
+  fallback,
 }: {
-  children: JSX.Element;
+  children: React.ReactElement | React.ReactElement[];
   queryKey?: string;
   currentCount: number;
   totalCount?: number;
   nextPage: () => void;
+  isLoading?: boolean;
+  fallback?: React.ReactElement;
 }) => {
   return (
-    <React.Fragment>
+    <Stack>
       {children}
       <InView
         onChange={(inView) => {
           inView && nextPage();
         }}
-        style={{ height: "10px" }}
       />
-    </React.Fragment>
+      {isLoading && fallback}
+    </Stack>
   );
 };

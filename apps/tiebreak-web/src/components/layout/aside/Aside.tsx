@@ -33,13 +33,15 @@ const Aside = () => {
         display={["none", "block"]}
       >
         <Spacer height={"40px"} />
-        <Image
-          width={"280px"}
-          height={"280px"}
-          src={"images/player.png"}
-          borderRadius={"50%"}
-          objectFit={"cover"}
-        />
+        <Link href={"/"}>
+          <Image
+            width={"280px"}
+            height={"280px"}
+            src={"/images/player.png"}
+            borderRadius={"50%"}
+            objectFit={"cover"}
+          />
+        </Link>
         <Spacer height={"40px"} />
         <Text typo={"Text28Bold"}>
           <span style={{ fontWeight: "400" }}>내 손안의 테니스장</span>
@@ -65,21 +67,25 @@ const Aside = () => {
           <Flex gap={"8px"} alignment={"center"}>
             <Link href={APP_STORE_LINK} target={"_blank"}>
               <Image
-                src={"images/app_store.png"}
+                src={"/images/app_store.png"}
                 width={"138px"}
                 height={"60px"}
+                objectFit={"cover"}
+                borderRadius={"4px"}
               />
             </Link>
             <Link href={PLAY_STORE_LINK} target={"_blank"}>
               <Image
-                src={"images/play_store.png"}
+                src={"/images/play_store.png"}
                 width={"138px"}
                 height={"60px"}
+                objectFit={"cover"}
+                borderRadius={"4px"}
               />
             </Link>
             <Link href={DYNAMIC_LINK} target={"_blank"}>
               <Image
-                src={"images/qr_code.png"}
+                src={"/images/qr_code.png"}
                 width={"50px"}
                 height={"50px"}
               />
