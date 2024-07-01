@@ -32,7 +32,7 @@ export const useGetInfiniteCourtsList = () => {
   });
 };
 
-export const useGetCourtsDetail = (courtId: string) => {
+  export const useGetCourtsDetail = (courtId: string) => {
   return useSuspenseQuery<CourtsDetailInterface>({
     queryKey: [QueryKeys.CourtsDetail, courtId],
     queryFn: async () => {

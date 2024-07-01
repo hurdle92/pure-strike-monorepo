@@ -10,7 +10,7 @@
     "eslint": "^8.48.0",
     "prettier": "^3.0.3",
     "tsconfig": "*",
-    "turbo": "latest"
+    "turbo": "^v2.0.6"
   },
   "name": "purestrikefrontend",
   "packageManager": "yarn@1.22.19",

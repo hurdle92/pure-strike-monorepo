@@ -1,11 +1,15 @@
+import dynamic from "next/dynamic";
 import React from "react";
-import Layout from "src/components/layout/Layout";
-import { CourtsDetail } from "src/page-modules/courts/detail/CourtsDetail";
+import CourtsDetail from "src/page-modules/courts/detail/CourtsDetail";
+
+const Layout = dynamic(() => import("src/components/layout/Layout"), {
+  ssr: false,
+});
 
 const CourtsDetailPage = ({ id }) => {
   return (
     <Layout>
-      <CourtsDetail id={id} />
+      <CourtsDetail id={id} fallback={<div>loading...</div>} />
     </Layout>
   );
 };
