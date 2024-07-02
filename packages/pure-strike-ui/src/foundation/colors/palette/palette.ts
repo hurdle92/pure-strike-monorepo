@@ -23,6 +23,7 @@ const RedPalette = {
 };
 
 const GrayPalette = {
+  "gray-primary": "#868E96",
   "gray-100": "#F7F7F7",
   "gray-200": "#F5F5F4",
   "gray-300": "#DEDEDE",
@@ -67,6 +68,7 @@ const TransparentPalett = {
 // NOTE : border 색상 정리가 필요
 const BorderColorPalett = {
   "border-gray": "#e1e1e1",
+  "border-skyblue": "#f2f4f9",
 };
 
 export const Palette = {
