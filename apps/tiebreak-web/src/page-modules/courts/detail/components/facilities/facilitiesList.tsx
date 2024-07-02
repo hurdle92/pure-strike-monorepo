@@ -63,8 +63,7 @@ export const FacilitiesList = ({
             borderRadius={"12px"}
             backgroundColor={"skyblue-primary"}
             width={["100%", "120px"]}
-            height={["auto", "120px"]}
-            aspectRatio={"1"}
+            height={"120px"}
           >
             <Flex justify={"center"} alignment={"center"}>
               {item.icon}
