@@ -39,6 +39,10 @@ const BluePalette = {
   "blue-700": "#3182f6",
 };
 
+const SkyBluePalette = {
+  "skyblue-primary": "#F2F8FE",
+};
+
 const NavyPalette = {
   navy: "#001437",
 };
@@ -77,6 +81,7 @@ export const Palette = {
   ...GrayPalette,
   ...NavyPalette,
   ...BluePalette,
+  ...SkyBluePalette,
   ...WhitePlatte,
   ...BlackPalette,
   ...StatusPalett,
