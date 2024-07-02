@@ -37,6 +37,10 @@ export interface OverflowProps {
   overflow?: "visible" | "hidden" | "scroll" | "auto";
 }
 
+export interface OpacityProps {
+  opacity?: number;
+}
+
 export interface MarginProps {
   marginTop?: number;
   marginRight?: number;
