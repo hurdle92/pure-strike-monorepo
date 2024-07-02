@@ -88,4 +88,5 @@ export const Container = styled.div<StackProps>`
     borderRadius && getPixelByType(borderRadius)};
 
   cursor: ${({ cursor }) => cursor};
+  opacity: ${({ opacity }) => opacity};
 `;

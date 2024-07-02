@@ -3,6 +3,7 @@ import {
   ComponentBaseProps,
   CursorProps,
   MarginProps,
+  OpacityProps,
   ResponsiveStyleProps,
 } from "~/types/componentProps";
 import { MouseEventHandler } from "~/types/events";
@@ -62,4 +63,5 @@ export interface StackProps
     MarginProps,
     BorderProps,
     StackOptions,
-    CursorProps {}
+    CursorProps,
+    OpacityProps {}
