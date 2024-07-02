@@ -9,5 +9,4 @@ export const GridWrapper = styled.div<GridProps>`
   ${(props) => getResponsiveStyles("grid-auto-flow", props.gridAutoFlow)};
   ${(props) => getResponsiveStyles("grid-column-gap", props.gridColumnGap)};
   ${(props) => getResponsiveStyles("grid-row-gap", props.gridRowGap)};
-  overflow-y: auto;
 `;
