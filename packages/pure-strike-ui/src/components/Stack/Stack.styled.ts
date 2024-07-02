@@ -56,12 +56,15 @@ const getBackgroundColor = (backgroundColor) => {
 };
 
 export const Container = styled.div<StackProps>`
+  ${(props) => getResponsiveStyles("width", props.width)};
+  ${(props) => getResponsiveStyles("height", props.height)};
   ${(props) => getResponsiveStyles("display", props.display)};
+
   position: ${({ position }) => position};
 
   min-width: ${({ minWidth }) => minWidth && getPixelByType(minWidth)};
-  ${(props) => getResponsiveStyles("width", props.width)};
-  ${(props) => getResponsiveStyles("height", props.height)};
+  max-width: ${({ maxWidth }) => maxWidth && getPixelByType(maxWidth)};
+
   min-height: ${({ minHeight }) => minHeight && getPixelByType(minHeight)};
   max-height: ${({ maxHeight }) => maxHeight && getPixelByType(maxHeight)};
 
@@ -83,4 +86,6 @@ export const Container = styled.div<StackProps>`
   z-index: ${({ zIndex }) => zIndex};
   border-radius: ${({ borderRadius }) =>
     borderRadius && getPixelByType(borderRadius)};
+
+  cursor: ${({ cursor }) => cursor};
 `;

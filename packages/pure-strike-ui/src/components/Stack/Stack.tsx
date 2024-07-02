@@ -26,8 +26,8 @@ export const Stack = forwardRef(
       borderRadius = 0,
       overflowX = "visible",
       overflowY = "visible",
-
       onClick = noop,
+      cursor = "inherit",
       children,
       ...rest
     }: StackProps,
@@ -55,6 +55,7 @@ export const Stack = forwardRef(
         overflowX={overflowX}
         overflowY={overflowY}
         onClick={onClick}
+        cursor={cursor}
         {...rest}
       >
         {children}

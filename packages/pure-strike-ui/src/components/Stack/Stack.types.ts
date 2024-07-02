@@ -1,6 +1,7 @@
 import { ColorPaletteProps, ZIndex } from "~/foundation";
 import {
   ComponentBaseProps,
+  CursorProps,
   MarginProps,
   ResponsiveStyleProps,
 } from "~/types/componentProps";
@@ -60,4 +61,5 @@ export interface StackProps
     PositionLocationProps,
     MarginProps,
     BorderProps,
-    StackOptions {}
+    StackOptions,
+    CursorProps {}
