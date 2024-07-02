@@ -8,6 +8,7 @@ import { AiOutlineHome } from "react-icons/ai";
 import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 import React from "react";
+import { FacilitiesList } from "./components/facilities/facilitiesList";
 
 const CourtsDetail = ({ id }: { id: string }) => {
   const [isShowMore, setIsShowMore] = React.useState(false);
@@ -20,7 +21,7 @@ const CourtsDetail = ({ id }: { id: string }) => {
       borderWidth={"1px"}
       borderColor={"border-gray"}
     >
-      <Img src={data.thumbnail} width={"420px"} height={"280px"} />
+      <Img src={data.thumbnail} width={"100%"} height={"280px"} />
       <Stack padding={"16px"}>
         <Text fontSize={"24px"} fontWeight={"700"}>
           {data.koName}
@@ -128,6 +129,15 @@ const CourtsDetail = ({ id }: { id: string }) => {
         <Text fontSize={"20px"} fontWeight={"700"}>
           편의시설
         </Text>
+        <Spacer height={"16px"} />
+        <FacilitiesList
+          isOnlineReservation={data.isOnlineReservation}
+          isIndoor={data.isIndoor}
+          isParking={data.isParking}
+          isShower={data.isShower}
+          isStore={data.isStore}
+          isRacketString={data.isRacketString}
+        />
       </Stack>
     </Stack>
   );
