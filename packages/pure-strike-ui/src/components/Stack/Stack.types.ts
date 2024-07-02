@@ -29,12 +29,13 @@ interface StackOptions {
   padding?: ResponsiveStyleProps;
   minWidth?: number | string;
   maxWidth?: number | string;
-  height?: number | string;
+  height?: ResponsiveStyleProps;
   minHeight?: number | string;
   maxHeight?: number | string;
   backgroundColor?: ColorPaletteProps;
   zIndex?: ZIndex;
   borderRadius?: number | string;
+  aspectRatio?: number | string;
   overflowX?: ResponsiveStyleProps<OverflowType>;
   overflowY?: ResponsiveStyleProps<OverflowType>;
   onClick?: MouseEventHandler;

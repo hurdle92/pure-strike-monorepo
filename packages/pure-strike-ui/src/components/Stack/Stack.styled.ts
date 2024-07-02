@@ -89,4 +89,7 @@ export const Container = styled.div<StackProps>`
 
   cursor: ${({ cursor }) => cursor};
   opacity: ${({ opacity }) => opacity};
+
+  aspect-ratio: ${({ aspectRatio }) =>
+    aspectRatio && getPixelByType(aspectRatio)};
 `;

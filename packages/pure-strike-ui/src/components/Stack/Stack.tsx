@@ -29,6 +29,7 @@ export const Stack = forwardRef(
       onClick = noop,
       cursor = "inherit",
       opacity = 1.0,
+      aspectRatio = "auto",
       children,
       ...rest
     }: StackProps,
@@ -58,6 +59,7 @@ export const Stack = forwardRef(
         onClick={onClick}
         cursor={cursor}
         opacity={opacity}
+        aspectRatio={aspectRatio}
         {...rest}
       >
         {children}
