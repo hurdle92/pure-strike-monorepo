@@ -14,6 +14,8 @@ import { GlobalStyle } from "src/styles/globals";
 import { DEFAULT_SEO } from "src/constants/seo";
 import { Suspense } from "react";
 import "react-loading-skeleton/dist/skeleton.css";
+import NextTopLoader from "nextjs-toploader";
+import { Palette } from "~foundation";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -28,15 +30,15 @@ export default function App({ Component, pageProps }: AppProps) {
   const { seoData } = pageProps;
 
   return (
-    <Suspense fallback={<div />}>
-      <QueryClientProvider client={queryClient}>
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
-        />
-        <Script
-          id="google-analytics"
-          dangerouslySetInnerHTML={{
-            __html: `
+    <QueryClientProvider client={queryClient}>
+      <NextTopLoader color={Palette["blue-primary"]} />
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
+      />
+      <Script
+        id="google-analytics"
+        dangerouslySetInnerHTML={{
+          __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
@@ -44,26 +46,26 @@ export default function App({ Component, pageProps }: AppProps) {
                 page_path: window.location.pathname,
               });
             `,
-          }}
-        />
-        {seoData ? <NextSeo {...seoData} /> : <NextSeo {...DEFAULT_SEO} />}
-        <StyleSheetManager
-          enableVendorPrefixes
-          shouldForwardProp={(propName, elementToBeRendered) => {
-            return typeof elementToBeRendered === "string"
-              ? isPropValid(propName)
-              : true;
-          }}
-        >
-          <GlobalStyle />
-
+        }}
+      />
+      {seoData ? <NextSeo {...seoData} /> : <NextSeo {...DEFAULT_SEO} />}
+      <StyleSheetManager
+        enableVendorPrefixes
+        shouldForwardProp={(propName, elementToBeRendered) => {
+          return typeof elementToBeRendered === "string"
+            ? isPropValid(propName)
+            : true;
+        }}
+      >
+        <GlobalStyle />
+        <Suspense fallback={<div />}>
           <HydrationBoundary state={pageProps.dehydratedState}>
             <Component {...pageProps} />
           </HydrationBoundary>
-          <SpeedInsights />
-        </StyleSheetManager>
-        <Analytics mode={"production"} />
-      </QueryClientProvider>
-    </Suspense>
+        </Suspense>
+        <SpeedInsights />
+      </StyleSheetManager>
+      <Analytics mode={"production"} />
+    </QueryClientProvider>
   );
 }
