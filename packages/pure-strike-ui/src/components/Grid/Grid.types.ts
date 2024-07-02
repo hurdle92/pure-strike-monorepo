@@ -9,7 +9,7 @@ interface GridOptions {
   gridTemplateColums: ResponsiveStyleProps;
   gridAutoFlow?: ResponsiveStyleProps<GridAutoFlowType>;
   gridColumnGap?: ResponsiveStyleProps;
-  gridRowGap?: number;
+  gridRowGap?: ResponsiveStyleProps;
   gap?: number;
 }
 

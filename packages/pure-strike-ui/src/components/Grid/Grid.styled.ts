@@ -8,8 +8,6 @@ export const GridWrapper = styled.div<GridProps>`
     getResponsiveStyles("grid-template-columns", props.gridTemplateColums)};
   ${(props) => getResponsiveStyles("grid-auto-flow", props.gridAutoFlow)};
   ${(props) => getResponsiveStyles("grid-column-gap", props.gridColumnGap)};
+  ${(props) => getResponsiveStyles("grid-row-gap", props.gridRowGap)};
   overflow-y: auto;
-
-  grid-column-gap: ${({ gridColumnGap }) => gridColumnGap + "px"};
-  grid-row-gap: ${({ gridRowGap }) => gridRowGap + "px"};
 `;
