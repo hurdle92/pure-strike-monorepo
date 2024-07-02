@@ -15,7 +15,8 @@ const CourtsDetail = ({ id }: { id: string }) => {
   const { data } = useGetCourtsDetail(id);
   return (
     <Stack
-      width={"420px"}
+      width={["100%", "420px"]}
+      maxWidth={"420px"}
       backgroundColor={"white"}
       borderWidth={"1px"}
       borderColor={"border-gray"}

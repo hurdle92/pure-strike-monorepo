@@ -53,7 +53,7 @@ export const FacilitiesList = ({
   return (
     <Grid
       gridTemplateColums={"repeat(3, 1fr)"}
-      gridColumnGap={"10px"}
+      gridColumnGap={["20px", "10px"]}
       gridRowGap={"20px"}
     >
       {list.map((item) => (
@@ -62,8 +62,9 @@ export const FacilitiesList = ({
             padding={"20px"}
             borderRadius={"12px"}
             backgroundColor={"skyblue-primary"}
-            width={"120px"}
-            height={"120px"}
+            width={["100%", "120px"]}
+            height={["auto", "120px"]}
+            aspectRatio={"1"}
           >
             <Flex justify={"center"} alignment={"center"}>
               {item.icon}
