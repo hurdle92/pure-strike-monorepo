@@ -9,7 +9,7 @@ import { FaInstagram } from "react-icons/fa";
 import { MdOutlineContentCopy } from "react-icons/md";
 import Link from "next/link";
 import React from "react";
-import { FacilitiesList } from "./components/facilities/FacilitiesList";
+import { FacilitiesList } from "./components/facilities/facilitiesList";
 import KakaoMap from "src/utils/map/kakao/KakaoMap";
 import { Palette } from "~foundation";
 import { copyToClipboard } from "src/utils/clipboard/clipboard";
