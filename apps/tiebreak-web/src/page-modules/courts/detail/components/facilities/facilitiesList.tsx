@@ -17,7 +17,7 @@ export const FacilitiesList = ({
   isStore,
   isRacketString,
 }: FacilityInterface) => {
-  const list = [
+  const featuresList = [
     {
       icon: <IoCalendarOutline size={30} />,
       label: FacilityLabelEnum.isOnlineReservation,
@@ -56,7 +56,7 @@ export const FacilitiesList = ({
       gridColumnGap={["20px", "10px"]}
       gridRowGap={"20px"}
     >
-      {list.map((item) => (
+      {featuresList.map((item) => (
         <Stack key={item.label} opacity={item.isAvailable ? 1.0 : 0.3}>
           <Stack
             padding={"20px"}
