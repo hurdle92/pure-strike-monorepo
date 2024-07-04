@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <NextTopLoader color={Palette["blue-primary"]} />
+      <NextTopLoader color={Palette["blue-primary"]} showSpinner={false} />
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}
       />
