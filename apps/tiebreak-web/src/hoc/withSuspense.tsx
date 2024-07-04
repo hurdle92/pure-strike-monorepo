@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 
 export const withSuspense =
   (Component) =>
-  ({ fallback, ...props }: { fallback: React.ReactElement }) => {
+  ({ fallback, ...props }) => {
     return (
       <Suspense fallback={fallback}>
         <Component {...props} />
