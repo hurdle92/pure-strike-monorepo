@@ -5,21 +5,16 @@ import { CourtsDetailSkeleton } from "src/page-modules/courts/detail/components/
 import { supabase } from "src/utils/supabase/supabase";
 import { seoMapper } from "src/utils/seo/seoMapper";
 import { CourtsDetailInterface } from "src/apis/courts/types";
-import { DefaultSeo, NextSeo } from "next-seo";
-import { DEFAULT_SEO } from "src/constants/seo";
 
 const Layout = dynamic(() => import("src/components/layout/Layout"), {
   ssr: false,
 });
 
-const CourtsDetailPage = ({ id, title }) => {
+const CourtsDetailPage = ({ id }) => {
   return (
-    <>
-      <NextSeo {...DEFAULT_SEO} title={title} />
-      <Layout>
-        <CourtsDetail id={id} fallback={<CourtsDetailSkeleton />} />
-      </Layout>
-    </>
+    <Layout>
+      <CourtsDetail id={id} fallback={<CourtsDetailSkeleton />} />
+    </Layout>
   );
 };
 
@@ -38,7 +33,6 @@ export async function getServerSideProps(context) {
   return {
     props: {
       id,
-      title: courtData.koName,
       seoData: seoMapper({
         title: courtData.koName,
         description: courtData.address,
