@@ -14,4 +14,6 @@ export const Flex = styled.div<FlexProps>`
 
   ${(props) => getResponsiveStyles("gap", props.gap)};
   ${(props) => getResponsiveStyles("flex-direction", props.direction)};
+
+  cursor: ${({ cursor }) => cursor};
 `;

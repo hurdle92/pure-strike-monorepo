@@ -14,6 +14,7 @@ export const Flex = forwardRef(
       gap = 0,
       overflow = "visible",
       onClick = noop,
+      cursor = "inherit",
       children,
       ...rest
     }: FlexProps,
@@ -29,6 +30,7 @@ export const Flex = forwardRef(
         gap={gap}
         overflow={overflow}
         onClick={onClick}
+        cursor={cursor}
         {...rest}
       >
         {children}

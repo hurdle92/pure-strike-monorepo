@@ -1,5 +1,6 @@
 import {
   ComponentBaseProps,
+  CursorProps,
   OverflowProps,
   ResponsiveStyleProps,
 } from "~/types/componentProps";
@@ -35,4 +36,5 @@ interface FlexOptions {
 export interface FlexProps
   extends ComponentBaseProps,
     OverflowProps,
+    CursorProps,
     FlexOptions {}
