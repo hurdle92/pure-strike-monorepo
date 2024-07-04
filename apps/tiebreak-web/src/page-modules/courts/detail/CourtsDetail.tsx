@@ -6,13 +6,22 @@ import { IoLocationSharp } from "react-icons/io5";
 import { FaPhone } from "react-icons/fa6";
 import { AiOutlineHome } from "react-icons/ai";
 import { FaInstagram } from "react-icons/fa";
+import { MdOutlineContentCopy } from "react-icons/md";
 import Link from "next/link";
 import React from "react";
-import { FacilitiesList } from "./components/facilities/facilitiesList";
+import { FacilitiesList } from "./components/facilities/FacilitiesList";
+import KakaoMap from "src/utils/map/kakao/KakaoMap";
+import { Palette } from "~foundation";
+import { copyToClipboard } from "src/utils/clipboard/clipboard";
 
 const CourtsDetail = ({ id }: { id: string }) => {
   const [isShowMore, setIsShowMore] = React.useState(false);
   const { data } = useGetCourtsDetail(id);
+
+  const onClickCopyAddress = () => {
+    copyToClipboard(data.address);
+  };
+
   return (
     <Stack
       width={["100%", "420px"]}
@@ -22,7 +31,7 @@ const CourtsDetail = ({ id }: { id: string }) => {
       borderColor={"border-gray"}
     >
       <Img src={data.thumbnail} width={"100%"} height={"280px"} />
-      <Stack padding={"16px"}>
+      <Stack padding={"16px 16px 32px 16px"}>
         <Text fontSize={"24px"} fontWeight={"700"}>
           {data.koName}
         </Text>
@@ -87,9 +96,8 @@ const CourtsDetail = ({ id }: { id: string }) => {
           )}
         </Stack>
       </Stack>
-      <Spacer height={"8px"} />
       <Divider width={"100%"} height={"10px"} color={"border-skyblue"} />
-      <Stack padding={"16px"}>
+      <Stack padding={"16px 16px 32px 16px"}>
         <Text fontSize={"20px"} fontWeight={"700"}>
           코트 정보
         </Text>
@@ -123,9 +131,8 @@ const CourtsDetail = ({ id }: { id: string }) => {
           </Text>
         </Flex>
       </Stack>
-      <Spacer height={"8px"} />
       <Divider width={"100%"} height={"10px"} color={"border-skyblue"} />
-      <Stack padding={"16px"}>
+      <Stack padding={"16px 16px 32px 16px"}>
         <Text fontSize={"20px"} fontWeight={"700"}>
           편의시설
         </Text>
@@ -138,6 +145,60 @@ const CourtsDetail = ({ id }: { id: string }) => {
           isStore={data.isStore}
           isRacketString={data.isRacketString}
         />
+      </Stack>
+      <Divider width={"100%"} height={"10px"} color={"border-skyblue"} />
+      <Stack padding={"16px 16px 32px 16px"}>
+        <Text fontSize={"20px"} fontWeight={"700"}>
+          기본 정보
+        </Text>
+        <Spacer height={"16px"} />
+        <Flex>
+          <Stack width={"80px"}>
+            <Text color={"gray-primary"} fontSize={"14px"}>
+              주소
+            </Text>
+          </Stack>
+          <Text whitespace={"pre-wrap"} fontSize={"14px"} lineHeight={"22px"}>
+            {data.address}
+          </Text>
+        </Flex>
+        <Spacer height={"4px"} />
+        <Flex>
+          <Stack width={"80px"}>
+            <Text color={"gray-primary"} fontSize={"14px"}>
+              전화
+            </Text>
+          </Stack>
+          <Text whitespace={"pre-wrap"} fontSize={"14px"} lineHeight={"22px"}>
+            {data.phoneNumber}
+          </Text>
+        </Flex>
+        <Spacer height={"4px"} />
+        <Flex>
+          <Stack width={"80px"}>
+            <Text color={"gray-primary"} fontSize={"14px"}>
+              영업 시간
+            </Text>
+          </Stack>
+          <Text whitespace={"pre-wrap"} fontSize={"14px"} lineHeight={"22px"}>
+            {data.operationTime}
+          </Text>
+        </Flex>
+        <Spacer height={"16px"} />
+        <KakaoMap lat={data.lat} lng={data.lng} name={data.koName} />
+        <Spacer height={"16px"} />
+        <Flex
+          alignment={"center"}
+          cursor={"pointer"}
+          onClick={onClickCopyAddress}
+        >
+          <MdOutlineContentCopy color={Palette["blue-primary"]} size={18} />
+          <Spacer width={"2px"} />
+          <Text color={"blue-primary"} fontWeight={"500"} fontSize={"14px"}>
+            주소복사
+          </Text>
+        </Flex>
+        <Spacer height={"16px"} />
       </Stack>
     </Stack>
   );
