@@ -3,7 +3,7 @@ import Skeleton from "react-loading-skeleton";
 
 export const CourtsDetailSkeleton = () => {
   return (
-    <Stack width={"420px"}>
+    <Stack width={"420px"} backgroundColor={"white"}>
       <Skeleton width={"420px"} height={"280px"} />
       <Stack padding={"16px 16px 32px 16px"}>
         <Skeleton width={"200px"} height={"30px"} />
