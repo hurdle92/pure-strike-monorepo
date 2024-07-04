@@ -5,3 +5,11 @@ declare module "react" {
     css?: CSSProp;
   }
 }
+
+declare const kakao: any;
+
+declare global {
+  interface Window {
+    kakao: any;
+  }
+}
