@@ -1,9 +1,7 @@
-import { count } from "console";
 import { useRouter } from "next/router";
-import { Flex, Stack, Text } from "pure-strike-ui";
 import { useGetCourtsSearch } from "src/apis/courts/queries";
+import { withSuspense } from "src/hoc/withSuspense";
 import { CourtItemInterface } from "src/types/courts";
-import { CourtsItem } from "../courts/list/components/courtsItem/CourtsItem";
 import { SearchResult } from "../courts/search/SearchResult";
 
 const Search = () => {
@@ -21,4 +19,4 @@ const Search = () => {
   return <SearchResult data={searchData} count={count} isEmpty={count === 0} />;
 };
 
-export default Search;
+export default withSuspense(Search);
