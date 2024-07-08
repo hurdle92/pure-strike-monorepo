@@ -11,11 +11,12 @@ import { searchDefaultValue } from "./core/_models";
 import { searchSchema } from "./core/_schema";
 import { useRouter } from "next/router";
 import React from "react";
+import { SEARCH_CHIPS_LIST } from "src/constants/search";
+import { SearchChipItem } from "./components/SearchChipItem";
 
 const Aside = () => {
   const router = useRouter();
   const {
-    trigger,
     control,
     watch,
     formState: { errors, isValid },
@@ -30,7 +31,6 @@ const Aside = () => {
       const keywordValue = watch("keyword");
       router.push(`/search?keyword=${keywordValue}`);
     }
-    return;
   }, [watch("keyword"), isValid]);
 
   return (
@@ -46,8 +46,8 @@ const Aside = () => {
         <Spacer height={"40px"} />
         <Link href={"/"}>
           <Image
-            width={"280px"}
-            height={"280px"}
+            width={"240px"}
+            height={"240px"}
             src={"/images/player.png"}
             borderRadius={"50%"}
             objectFit={"cover"}
@@ -67,14 +67,21 @@ const Aside = () => {
         <Spacer height={"16px"} />
         <Stack width={"342px"}>
           <TextField
-            placeholder={"지역 및 코트명을 입력해주세요. (ex: 서초)"}
+            placeholder={"지역 및 코트명을 입력해주세요."}
             isAllowClear={true}
             controlKey={"keyword"}
             control={control}
             isError={errors.keyword}
-            errMessage={errors.keyword?.message}
             onPressEnter={onPressEnterKeyword}
           />
+        </Stack>
+        <Spacer height={"16px"} />
+        <Stack width={"342px"}>
+          <Flex gap={"8px"} flexWrap={"wrap"}>
+            {SEARCH_CHIPS_LIST.map((item) => (
+              <SearchChipItem key={item.name} name={item.name} />
+            ))}
+          </Flex>
         </Stack>
         <Stack position={"absolute"} bottom={"30px"} height={"auto"}>
           <Flex gap={"8px"} alignment={"center"}>
