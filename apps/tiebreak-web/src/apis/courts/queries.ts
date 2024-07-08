@@ -10,6 +10,7 @@ import { CourtsDetailInterface } from "./types";
 const enum QueryKeys {
   CourtsList = "courtsList",
   CourtsDetail = "courtsDetail",
+  CourtsSerach = "courtSearch",
 }
 
 export const useGetInfiniteCourtsList = () => {
@@ -32,7 +33,7 @@ export const useGetInfiniteCourtsList = () => {
   });
 };
 
-  export const useGetCourtsDetail = (courtId: string) => {
+export const useGetCourtsDetail = (courtId: string) => {
   return useSuspenseQuery<CourtsDetailInterface>({
     queryKey: [QueryKeys.CourtsDetail, courtId],
     queryFn: async () => {
@@ -42,6 +43,21 @@ export const useGetInfiniteCourtsList = () => {
         .eq("id", courtId)
         .single();
       return data;
+    },
+  });
+};
+
+export const useGetCourtsSearch = (keyword: string) => {
+  return useSuspenseQuery({
+    queryKey: [QueryKeys.CourtsDetail, keyword],
+    queryFn: async () => {
+      const { data, count } = await supabase
+        .from("courts")
+        .select("*", { count: "exact" })
+        .or(`koName.ilike.%${keyword}%,address.ilike.%${keyword}%`)
+        .eq("isUse", true)
+        .order("priority");
+      return { data, count };
     },
   });
 };
