@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
-import { NextSeo } from "next-seo";
+import { DefaultSeo, NextSeo } from "next-seo";
 import {
   QueryClient,
   QueryClientProvider,
@@ -48,7 +48,7 @@ export default function App({ Component, pageProps }: AppProps) {
             `,
         }}
       />
-      {seoData ? <NextSeo {...seoData} /> : <NextSeo {...DEFAULT_SEO} />}
+      <DefaultSeo {...DEFAULT_SEO} />
       <StyleSheetManager
         enableVendorPrefixes
         shouldForwardProp={(propName, elementToBeRendered) => {

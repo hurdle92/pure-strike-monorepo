@@ -5,16 +5,20 @@ import { CourtsDetailSkeleton } from "src/page-modules/courts/detail/components/
 import { supabase } from "src/utils/supabase/supabase";
 import { seoMapper } from "src/utils/seo/seoMapper";
 import { CourtsDetailInterface } from "src/apis/courts/types";
+import { NextSeo } from "next-seo";
 
 const Layout = dynamic(() => import("src/components/layout/Layout"), {
   ssr: false,
 });
 
-const CourtsDetailPage = ({ id }) => {
+const CourtsDetailPage = ({ id, seoData }) => {
   return (
-    <Layout>
-      <CourtsDetail id={id} fallback={<CourtsDetailSkeleton />} />
-    </Layout>
+    <>
+      <NextSeo {...seoData} />
+      <Layout>
+        <CourtsDetail id={id} fallback={<CourtsDetailSkeleton />} />
+      </Layout>
+    </>
   );
 };
 
