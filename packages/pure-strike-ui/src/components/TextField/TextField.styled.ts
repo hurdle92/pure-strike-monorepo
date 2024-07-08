@@ -5,7 +5,6 @@ import { Text } from "../Text/Text";
 
 // NOTE : field error 공통 스타일
 export const erroredWrapperBorderStyle = css`
-  border: 1px solid ${Palette["status-error"]};
   span {
     color: ${Palette["status-error"]};
   }

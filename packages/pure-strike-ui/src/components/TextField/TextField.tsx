@@ -125,7 +125,7 @@ export const TextField = forwardRef(
           {RightContent}
         </Styled.Container>
         {errMessage && (
-          <Styled.ErrorMessage color={"red-500"}>
+          <Styled.ErrorMessage color={"status-error"}>
             {errMessage}
           </Styled.ErrorMessage>
         )}
