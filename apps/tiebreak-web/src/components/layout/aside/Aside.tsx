@@ -9,18 +9,29 @@ import {
 } from "src/constants/link";
 import { searchDefaultValue } from "./core/_models";
 import { searchSchema } from "./core/_schema";
+import { useRouter } from "next/router";
+import React from "react";
 
 const Aside = () => {
+  const router = useRouter();
   const {
+    trigger,
     control,
-    handleSubmit,
-    getValues,
     watch,
     formState: { errors, isValid },
   } = useForm({
+    mode: "all",
     defaultValues: searchDefaultValue,
     resolver: yupResolver(searchSchema),
   });
+
+  const onPressEnterKeyword = React.useCallback(() => {
+    if (isValid) {
+      const keywordValue = watch("keyword");
+      router.push(`/search?keyword=${keywordValue}`);
+    }
+    return;
+  }, [watch("keyword"), isValid]);
 
   return (
     <aside>
@@ -56,11 +67,13 @@ const Aside = () => {
         <Spacer height={"16px"} />
         <Stack width={"342px"}>
           <TextField
-            placeholder={"지역 및 코트명을 입력해주세요."}
+            placeholder={"지역 및 코트명을 입력해주세요. (ex: 서초)"}
             isAllowClear={true}
             controlKey={"keyword"}
             control={control}
             isError={errors.keyword}
+            errMessage={errors.keyword?.message}
+            onPressEnter={onPressEnterKeyword}
           />
         </Stack>
         <Stack position={"absolute"} bottom={"30px"} height={"auto"}>
