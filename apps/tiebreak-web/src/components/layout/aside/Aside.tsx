@@ -75,7 +75,7 @@ const Aside = () => {
             onPressEnter={onPressEnterKeyword}
           />
         </Stack>
-        <Spacer height={"16px"} />
+        <Spacer height={"32px"} />
         <Stack width={"342px"}>
           <Flex gap={"8px"} flexWrap={"wrap"}>
             {SEARCH_CHIPS_LIST.map((item) => (
