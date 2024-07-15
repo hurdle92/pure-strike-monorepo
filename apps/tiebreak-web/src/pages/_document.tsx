@@ -30,6 +30,12 @@ export default class MyDocument extends Document {
     return (
       <Html lang="ko">
         <Head>
+          <script
+            id="mapScript"
+            type="text/javascript"
+            src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_APP_KEY}&autoload=true`}
+            async
+          />
           <meta
             name="google-site-verification"
             content="CCxguLQ6uvaSsl5XaSCtMwPMO4xEILk5PcC3WC75zNU"
@@ -38,11 +44,6 @@ export default class MyDocument extends Document {
             <Main />
             <NextScript />
           </body>
-          <script
-            id="mapScript"
-            type="text/javascript"
-            src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_APP_KEY}&autoload=false`}
-          />
         </Head>
       </Html>
     );
