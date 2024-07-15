@@ -34,7 +34,6 @@ export default class MyDocument extends Document {
             id="mapScript"
             type="text/javascript"
             src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_APP_KEY}&autoload=true`}
-            async
           />
           <meta
             name="google-site-verification"
