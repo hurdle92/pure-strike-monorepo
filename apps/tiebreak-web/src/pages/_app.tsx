@@ -1,6 +1,6 @@
 import type { AppProps } from "next/app";
 import { Analytics } from "@vercel/analytics/react";
-import { DefaultSeo } from "next-seo";
+import { DefaultSeo, NextSeo } from "next-seo";
 import {
   QueryClient,
   QueryClientProvider,
@@ -27,6 +27,8 @@ const queryClient = new QueryClient({
 });
 
 export default function App({ Component, pageProps }: AppProps) {
+  const { seoData } = pageProps;
+
   return (
     <QueryClientProvider client={queryClient}>
       <NextTopLoader color={Palette["blue-primary"]} showSpinner={false} />
