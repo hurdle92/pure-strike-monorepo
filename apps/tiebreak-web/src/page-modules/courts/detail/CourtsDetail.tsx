@@ -21,7 +21,6 @@ const CourtsDetail = ({ id }: { id: string }) => {
   const onClickCopyAddress = () => {
     copyToClipboard(data.address);
   };
-  console.log(data);
 
   return (
     <Stack
