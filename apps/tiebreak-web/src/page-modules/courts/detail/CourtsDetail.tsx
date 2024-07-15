@@ -185,7 +185,7 @@ const CourtsDetail = ({ id }: { id: string }) => {
           </Text>
         </Flex>
         <Spacer height={"16px"} />
-        <KakaoMap lat={data.lat} lng={data.lng} name={data.koName} />
+        {/* <KakaoMap lat={data.lat} lng={data.lng} name={data.koName} /> */}
         <Spacer height={"16px"} />
         <Flex
           alignment={"center"}
