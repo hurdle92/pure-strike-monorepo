@@ -6,6 +6,7 @@ import { supabase } from "src/utils/supabase/supabase";
 import { seoMapper } from "src/utils/seo/seoMapper";
 import { CourtsDetailInterface } from "src/apis/courts/types";
 import { NextSeo } from "next-seo";
+import { dehydrate, QueryClient } from "@tanstack/react-query";
 
 const Layout = dynamic(() => import("src/components/layout/Layout"), {
   ssr: false,
@@ -26,13 +27,24 @@ export default CourtsDetailPage;
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
-  const { data } = await supabase
-    .from("courts")
-    .select("*")
-    .eq("id", id)
-    .single();
+  const queryClient = new QueryClient();
 
-  const courtData: CourtsDetailInterface = data;
+  await queryClient.prefetchQuery({
+    queryKey: ["courtsDetail", id],
+    queryFn: async () => {
+      const { data } = await supabase
+        .from("courts")
+        .select("*")
+        .eq("id", id)
+        .single();
+      return data;
+    },
+  });
+
+  const courtData = queryClient.getQueryData([
+    "courtsDetail",
+    id,
+  ]) as CourtsDetailInterface;
 
   return {
     props: {
@@ -41,6 +53,7 @@ export async function getServerSideProps(context) {
         title: courtData.koName,
         description: courtData.address,
       }),
+      dehydratedState: dehydrate(queryClient),
     },
   };
 }
