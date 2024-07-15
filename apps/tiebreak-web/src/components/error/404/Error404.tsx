@@ -6,7 +6,7 @@ import {
   ButtonStyleVariant,
 } from "~components/Button/Button.types";
 
-export const Error404 = () => {
+const Error404Page = () => {
   return (
     <Stack height={"100vh"}>
       <Flex justify={"center"} alignment={"center"} direction={"column"}>
@@ -35,3 +35,5 @@ export const Error404 = () => {
     </Stack>
   );
 };
+
+export default Error404Page;

@@ -1,7 +1,7 @@
-import { Error404 } from "src/components/error/404/Error404";
+import dynamic from "next/dynamic";
 
-const Error404Page = () => {
-  return <Error404 />;
-};
+const Error404 = dynamic(() => import("src/components/error/404/Error404"), {
+  ssr: false,
+});
 
-export default Error404Page;
+export default Error404;

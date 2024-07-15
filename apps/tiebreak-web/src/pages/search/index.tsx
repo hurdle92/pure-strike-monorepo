@@ -1,7 +1,11 @@
+import dynamic from "next/dynamic";
 import React from "react";
 import Search from "src/page-modules/search/Search";
 import { SearchResultSkeleton } from "src/page-modules/courts/search/components/skeleton/SearchResultSkeleton";
-import Layout from "src/components/layout/Layout";
+
+const Layout = dynamic(() => import("src/components/layout/Layout"), {
+  ssr: false,
+});
 
 const SearchPage = () => {
   return (
