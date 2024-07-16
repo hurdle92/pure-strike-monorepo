@@ -12,10 +12,14 @@ const Layout = dynamic(() => import("src/components/layout/Layout"), {
   ssr: false,
 });
 
-const CourtsDetailPage = ({ id, seoData }) => {
+const CourtsDetailPage = ({ id, title }) => {
   return (
     <>
-      <NextSeo {...seoData} />
+      <NextSeo
+        openGraph={{
+          title: title,
+        }}
+      />
       <Layout>
         <CourtsDetail id={id} fallback={<CourtsDetailSkeleton />} />
       </Layout>
@@ -49,10 +53,7 @@ export async function getServerSideProps(context) {
   return {
     props: {
       id,
-      seoData: seoMapper({
-        title: courtData.koName,
-        description: courtData.address,
-      }),
+      title: courtData.koName,
       dehydratedState: dehydrate(queryClient),
     },
   };
