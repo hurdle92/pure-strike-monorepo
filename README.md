@@ -20,8 +20,8 @@ Pure-Strike Monorepo built with Turborepo, React, Next.js, React-Query, Zustand 
 ### 주요기능
 - App 랜딩 및 진입 페이지 역할
 - 데스크탑, 모바일 반응형 UI 제공
-- 코트 검색 기능 (* **추가예정**)
-- 코트 상세 페이지 (* **추가예정**)
+- 코트 검색 기능
+- 코트 상세 페이지
 
 <br/>
 
