@@ -6,5 +6,5 @@ export const getGuestbooks = async () => {
     .from("guestbook")
     .select("*", { count: "exact", head: false })
     .order("created_at", { ascending: false });
-  return { data, count };
+  return { data, count } as GuestbookListResultInterface;
 };
