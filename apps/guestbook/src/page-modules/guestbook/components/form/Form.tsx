@@ -35,6 +35,7 @@ export const Form = () => {
             value={watch("guestbookInput")}
             controlKey={"guestbookInput"}
             placeholder={"방명록을 입력해주세요."}
+            onPressEnter={onClickSubmit}
           />
         </Stack>
         <Spacer width={"20px"} />
