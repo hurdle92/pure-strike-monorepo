@@ -1,6 +1,6 @@
 import { GuestBook } from "src/page-modules/guestbook/GuestBook";
 
-const GestBookPage = () => {
+const GestBookPage = async () => {
   return <GuestBook />;
 };
 

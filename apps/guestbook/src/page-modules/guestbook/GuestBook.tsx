@@ -15,7 +15,7 @@ export const GuestBook = () => {
       <Spacer height={"32px"} />
       <Flex justify={"space-between"} alignment={"center"}>
         <Text fontSize={"32px"} fontWeight={"900"}>
-          Guest Book
+          Guest Book ({data?.count || 0})
         </Text>
         <Link href={BLOG_URL} target={"_blank"}>
           <Text color={"blue-primary"} fontWeight={"bold"}>

@@ -10,7 +10,8 @@ export const Form = () => {
   const {
     control,
     watch,
-    formState: { errors, isValid },
+    setValue,
+    formState: { isValid },
   } = useForm({
     mode: "all",
     defaultValues: guestbookInputDefaultValue,
@@ -22,6 +23,7 @@ export const Form = () => {
   const onClickSubmit = React.useCallback(() => {
     const inputValue = watch("guestbookInput");
     mutate({ content: inputValue });
+    setValue("guestbookInput", "");
   }, [watch("guestbookInput")]);
 
   return (
@@ -30,6 +32,7 @@ export const Form = () => {
         <Stack width={"100%"}>
           <TextField
             control={control}
+            value={watch("guestbookInput")}
             controlKey={"guestbookInput"}
             placeholder={"방명록을 입력해주세요."}
           />
