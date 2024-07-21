@@ -3,14 +3,8 @@ import { Suspense } from "react";
 import Provider from "src/provider";
 
 export const metadata: Metadata = {
-  title: "",
-  description: "",
-  openGraph: {
-    title: "",
-    description: "",
-    url: "",
-    images: "",
-  },
+  title: "Guestbook",
+  description: "Guestbook",
 };
 
 const RootLayout = ({
