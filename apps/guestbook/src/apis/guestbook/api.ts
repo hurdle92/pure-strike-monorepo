@@ -4,7 +4,7 @@ import { GuestbookListResultInterface } from "./types";
 export const getGuestbooks = async () => {
   const { data, count } = await supabase
     .from("guestbook")
-    .select("*", { count: "exact", head: false })
+    .select("*", { count: "exact" })
     .order("created_at", { ascending: false });
   return { data, count } as GuestbookListResultInterface;
 };
