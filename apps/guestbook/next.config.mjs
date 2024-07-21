@@ -2,11 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-
   compiler: {
     styledComponents: true,
   },
-  output: "standalone",
+  transpilePackages: ["ui"],
+  experimental: {
+    scrollRestoration: true,
+  },
 };
 
 export default nextConfig;
