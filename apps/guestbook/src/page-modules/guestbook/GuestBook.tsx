@@ -28,6 +28,7 @@ export const GuestBook = () => {
         {data?.data.map((item) => <GuestbookItem data={item} key={item.id} />)}
       </Flex>
       <Form />
+      <Spacer height={"100px"} />
     </Stack>
   );
 };
