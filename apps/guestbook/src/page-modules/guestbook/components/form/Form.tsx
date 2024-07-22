@@ -11,6 +11,7 @@ export const Form = () => {
     control,
     watch,
     setValue,
+    trigger,
     formState: { isValid },
   } = useForm({
     mode: "all",
@@ -24,6 +25,7 @@ export const Form = () => {
     const inputValue = watch("guestbookInput");
     mutate({ content: inputValue });
     setValue("guestbookInput", "");
+    trigger("guestbookInput");
   }, [watch("guestbookInput")]);
 
   return (
