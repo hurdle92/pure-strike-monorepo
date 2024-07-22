@@ -29,7 +29,7 @@ export const Form = () => {
   }, [watch("guestbookInput")]);
 
   return (
-    <Stack position={"fixed"} bottom={"20px"} width={"760px"}>
+    <Stack position={"fixed"} bottom={"20px"} width={"100%"} maxWidth={"760px"}>
       <Flex>
         <Stack width={"100%"}>
           <TextField
