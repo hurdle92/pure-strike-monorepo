@@ -1,29 +1,18 @@
-import {
-  useInfiniteQuery,
-  useQuery,
-  useSuspenseQuery,
-} from "@tanstack/react-query";
-import { PER_PAGE } from "src/constants/page";
-import { supabase } from "src/utils/supabase/supabase";
+import { useInfiniteQuery, useSuspenseQuery } from "@tanstack/react-query";
+import { getCourtsDetail, getCourtsList, getCourtsSearchList } from "./api";
 import { CourtsDetailInterface } from "./types";
 
 const enum QueryKeys {
   CourtsList = "courtsList",
   CourtsDetail = "courtsDetail",
-  CourtsSerach = "courtSearch",
+  CourtsSerach = "courtsSearch",
 }
 
 export const useGetInfiniteCourtsList = () => {
   return useInfiniteQuery({
     queryKey: [QueryKeys.CourtsList],
     queryFn: ({ pageParam }) => {
-      return supabase
-        .from("courts")
-        .select("*")
-        .eq("isUse", true)
-        .order("priority", { ascending: false })
-        .limit(30)
-        .range(pageParam * PER_PAGE, (pageParam + 1) * PER_PAGE - 1);
+      return getCourtsList({ pageParam });
     },
     initialPageParam: 0,
     getNextPageParam: (_, allPages) => {
@@ -36,28 +25,13 @@ export const useGetInfiniteCourtsList = () => {
 export const useGetCourtsDetail = (courtId: string) => {
   return useSuspenseQuery<CourtsDetailInterface>({
     queryKey: [QueryKeys.CourtsDetail, courtId],
-    queryFn: async () => {
-      const { data } = await supabase
-        .from("courts")
-        .select("*")
-        .eq("id", courtId)
-        .single();
-      return data;
-    },
+    queryFn: () => getCourtsDetail({ courtId }),
   });
 };
 
 export const useGetCourtsSearch = (keyword: string) => {
   return useSuspenseQuery({
-    queryKey: [QueryKeys.CourtsDetail, keyword],
-    queryFn: async () => {
-      const { data, count } = await supabase
-        .from("courts")
-        .select("*", { count: "exact" })
-        .or(`koName.ilike.%${keyword}%,address.ilike.%${keyword}%`)
-        .eq("isUse", true)
-        .order("priority");
-      return { data, count };
-    },
+    queryKey: [QueryKeys.CourtsSerach, keyword],
+    queryFn: () => getCourtsSearchList({ keyword }),
   });
 };
