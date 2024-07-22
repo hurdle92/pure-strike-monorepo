@@ -76,9 +76,8 @@ export const TextField = forwardRef(
     }, [value, ref]);
 
     const activeEnter = (e: any) => {
-      switch (e.key) {
-        case "Enter":
-          return onPressEnter();
+      if (e.key === "Enter" && e.nativeEvent.isComposing === false) {
+        onPressEnter();
       }
     };
 
