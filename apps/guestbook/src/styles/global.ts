@@ -1,8 +1,9 @@
 import { createGlobalStyle } from "styled-components";
+import { inTer } from "./fonts";
 
 export const GlobalStyle = createGlobalStyle`
   * {
-    font-family: Pretendard;
+    font-family: ${inTer.style.fontFamily};
     box-sizing: border-box;
     padding: 0;
     margin: 0;
