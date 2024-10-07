@@ -1,9 +1,8 @@
 import { css } from "styled-components";
-import ButtonProps from "~/components/Button/Button.types";
 import { Palette } from "../colors/palette";
 
 const Primary = css`
-  background-color: ${Palette["black-origin"]};
+  background-color: ${Palette["blue-primary"]};
   transition: 0.1s ease-in-out;
   color: white;
   &:disabled {
@@ -11,7 +10,7 @@ const Primary = css`
     color: ${Palette["gray-400"]};
   }
   &:hover {
-    background-color: ${Palette["black-origin-80"]};
+    background-color: ${Palette["blue-primary-90"]};
   }
 `;
 

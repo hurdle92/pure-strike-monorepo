@@ -36,6 +36,7 @@ const GrayPalette = {
 
 const BluePalette = {
   "blue-primary": "#2454f8",
+  "blue-primary-90": hexToRgba("#2454f8", 0.8),
   "blue-700": "#3182f6",
 };
 
@@ -53,9 +54,14 @@ const WhitePlatte = {
 
 const BlackPalette = {
   "black-origin": "#111111",
+  "black-origin-30": hexToRgba("#111111", 0.3),
   "black-origin-50": hexToRgba("#111111", 0.5),
   "black-origin-70": hexToRgba("#111111", 0.7),
   "black-origin-80": hexToRgba("#111111", 0.8),
+};
+
+const PurplePalette = {
+  "purple-primary": "#EEF1FC",
 };
 
 const StatusPalett = {
@@ -83,6 +89,7 @@ export const Palette = {
   ...BluePalette,
   ...SkyBluePalette,
   ...WhitePlatte,
+  ...PurplePalette,
   ...BlackPalette,
   ...StatusPalett,
   ...TransparentPalett,

@@ -4,14 +4,7 @@ import Aside from "./aside/Aside";
 
 // NOTE : default layout
 const Layout = ({ children }) => {
-  return (
-    <Stack>
-      <Flex justify={"center"}>
-        <Aside />
-        {children}
-      </Flex>
-    </Stack>
-  );
+  return <Stack>{children}</Stack>;
 };
 
 export default Layout;
