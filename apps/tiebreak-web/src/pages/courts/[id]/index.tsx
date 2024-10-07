@@ -5,13 +5,13 @@ import { supabase } from "src/utils/supabase/supabase";
 import { seoMapper } from "src/utils/seo/seoMapper";
 import { CourtsDetailInterface } from "src/apis/courts/types";
 import { dehydrate, QueryClient } from "@tanstack/react-query";
-import Layout from "src/components/layout/Layout";
+import CourtsLayout from "src/components/layout/courts/CourtsLayout";
 
-const CourtsDetailPage = ({ id, seoData }) => {
+const CourtsDetailPage = ({ id }) => {
   return (
-    <Layout>
+    <CourtsLayout>
       <CourtsDetail id={id} fallback={<CourtsDetailSkeleton />} />
-    </Layout>
+    </CourtsLayout>
   );
 };
 

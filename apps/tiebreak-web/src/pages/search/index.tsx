@@ -1,17 +1,13 @@
-import dynamic from "next/dynamic";
 import React from "react";
 import Search from "src/page-modules/search/Search";
 import { SearchResultSkeleton } from "src/page-modules/courts/search/components/skeleton/SearchResultSkeleton";
-
-const Layout = dynamic(() => import("src/components/layout/Layout"), {
-  ssr: false,
-});
+import CourtsLayout from "src/components/layout/courts/CourtsLayout";
 
 const SearchPage = () => {
   return (
-    <Layout>
+    <CourtsLayout>
       <Search fallback={<SearchResultSkeleton />} />
-    </Layout>
+    </CourtsLayout>
   );
 };
 

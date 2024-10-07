@@ -1,7 +1,12 @@
-import { CourtsList } from "../courts/list/CourtsList";
+import { Stack } from "pure-strike-ui";
+import { Banner } from "./banner/Banner";
 
 const Home = () => {
-  return <CourtsList />;
+  return (
+    <Stack>
+      <Banner />
+    </Stack>
+  );
 };
 
 export default Home;
