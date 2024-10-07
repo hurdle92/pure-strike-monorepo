@@ -1,10 +1,10 @@
 import { createGlobalStyle } from "styled-components";
-import { inTer } from "./fonts";
+import { pretendard } from "./fonts";
 
 export const GlobalStyle = createGlobalStyle`
 
 * {
-  font-family: ${inTer.style.fontFamily};
+  font-family: ${pretendard.style.fontFamily};
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -12,8 +12,8 @@ export const GlobalStyle = createGlobalStyle`
  
 html,
 body {
-  font-family: Inter, "Noto Sans KR";
-  background-color: #EEF1FC;
+  font-family: Pretendard, "Noto Sans KR";
+  background-color: white;
 }
 
 a {
