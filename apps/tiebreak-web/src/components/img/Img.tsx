@@ -20,8 +20,6 @@ export const Img = ({
         height={0}
         sizes={"100vw"}
         style={{ width: "100%", height: "100%" }}
-        placeholder={"blur"}
-        blurDataURL={BLUR_IMG_URL}
       />
     </ImageContainer>
   );

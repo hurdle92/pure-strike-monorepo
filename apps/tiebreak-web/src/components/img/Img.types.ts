@@ -5,6 +5,7 @@ export interface ImgProps {
   width: string;
   height: string;
   borderRadius?: string;
+  isNeedBlur?: boolean;
 }
 
 export interface ImgStyledProps
