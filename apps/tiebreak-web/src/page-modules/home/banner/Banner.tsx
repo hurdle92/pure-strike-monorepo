@@ -1,6 +1,8 @@
 import { Flex, Responsive, Stack, Text, Spacer, Button } from "pure-strike-ui";
 import { Img } from "src/components/img";
 import { ReactTyped } from "react-typed";
+import Link from "next/link";
+import { LITTLY_LINK } from "src/constants/link";
 
 export const Banner = () => {
   return (
@@ -42,7 +44,9 @@ export const Banner = () => {
                 margin={"0 auto"}
                 left={"20px"}
               >
-                <Button text={"지금 다운받기"} borderRadius={"14px"} />
+                <Link href={LITTLY_LINK} target={"_blank"}>
+                  <Button text={"지금 다운받기"} borderRadius={"12px"} />
+                </Link>
               </Stack>
             </Stack>
           </Stack>
@@ -83,7 +87,9 @@ export const Banner = () => {
                 />
                 <Spacer height={"30px"} />
                 <Stack width={"160px"} height={"50px"}>
-                  <Button text={"지금 다운받기"} borderRadius={"14px"} />
+                  <Link href={LITTLY_LINK} target={"_blank"}>
+                    <Button text={"지금 다운받기"} borderRadius={"8px"} />
+                  </Link>
                 </Stack>
               </Flex>
             </Stack>

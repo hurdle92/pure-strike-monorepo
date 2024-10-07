@@ -3,3 +3,4 @@ export const APP_STORE_LINK =
 export const PLAY_STORE_LINK =
   "https://play.google.com/store/apps/details?id=com.app.tiebreak&pcampaignid=web_share";
 export const DYNAMIC_LINK = "https://tiebreak.page.link/app";
+export const LITTLY_LINK = "https://litt.ly/tiebreak";
