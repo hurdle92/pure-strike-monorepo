@@ -1,7 +1,7 @@
 // NOTE : 기본적인 SEO
 export const DEFAULT_SEO = {
-  title: "타이브레이크 | 내 손안의 테니스장",
-  description: "내 손안의 테니스장, 타이브레이크",
+  title: "타이브레이크 | 테니스 다이어리 앱",
+  description: "내 손안의 테니스 다이어리",
   keyword:
     "타이브레이크, 테니스, 테니스장, 테니스 매칭, 테니스 레슨, 테니스 커뮤니티",
   canonical: "https://tiebreak.vercel.app",
@@ -9,10 +9,10 @@ export const DEFAULT_SEO = {
     type: "website",
     url: "https://tiebreak.vercel.app",
     title: "타이브레이크",
-    description: "내 손안의 테니스장, 타이브레이크",
+    description: "내 손안의 테니스 다이어리",
     article: {
       authors: [
-        "타이브레이크, 테니스, 테니스장, 테니스 매칭, 테니스 레슨, 테니스 커뮤니티",
+        "타이브레이크, 테니스, 테니스 다이어리, 테니스장, 테니스 매칭, 테니스 레슨, 테니스 커뮤니티",
       ],
     },
     images: [
