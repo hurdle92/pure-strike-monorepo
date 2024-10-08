@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { BLUR_IMG_URL } from "src/constants/img";
 import { ImageContainer } from "./Img.styled";
 import { ImgProps } from "./Img.types";
 
@@ -11,9 +10,17 @@ export const Img = ({
   height,
   borderRadius,
   priority = false,
+  style,
+  ...rest
 }: ImgProps) => {
   return (
-    <ImageContainer width={width} height={height} borderRadius={borderRadius}>
+    <ImageContainer
+      width={width}
+      height={height}
+      borderRadius={borderRadius}
+      style={style}
+      {...rest}
+    >
       <Image
         alt={alt}
         src={src}

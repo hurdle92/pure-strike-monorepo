@@ -60,14 +60,11 @@ export const Banner = () => {
                 width={"100%"}
                 height={"100vh"}
                 priority={true}
+                style={{
+                  filter: "brightness(90%)",
+                }}
               />
             </Stack>
-            <Stack
-              position={"absolute"}
-              width={"100%"}
-              height={"100vh"}
-              backgroundColor={"black-origin-30"}
-            />
             <Stack position={"absolute"} width={"100%"} height={"100vh"}>
               <Flex
                 justify={"center"}
