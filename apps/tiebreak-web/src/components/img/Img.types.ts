@@ -1,4 +1,6 @@
-export interface ImgProps {
+import { ImageProps } from "next/image";
+
+export interface ImgProps extends Pick<ImageProps, "priority"> {
   alt?: string;
   src?: string;
   isOrigin?: boolean;

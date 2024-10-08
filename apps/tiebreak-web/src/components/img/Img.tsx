@@ -10,6 +10,7 @@ export const Img = ({
   width = "100%",
   height,
   borderRadius,
+  priority = false,
 }: ImgProps) => {
   return (
     <ImageContainer width={width} height={height} borderRadius={borderRadius}>
@@ -18,7 +19,9 @@ export const Img = ({
         src={src}
         width={0}
         height={0}
+        priority={priority}
         sizes={"100vw"}
+        placeholder={"empty"}
         style={{ width: "100%", height: "100%" }}
       />
     </ImageContainer>

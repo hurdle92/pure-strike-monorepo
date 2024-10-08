@@ -15,6 +15,7 @@ export const Banner = () => {
                 src={"/images/home/banner/banner_mobile.jpg"}
                 width={"100%"}
                 height={"100vh"}
+                priority={true}
               />
             </Stack>
             <Stack position={"absolute"} width={"100%"} height={"100vh"}>
@@ -58,6 +59,7 @@ export const Banner = () => {
                 src={"/images/home/banner/banner_desktop.jpg"}
                 width={"100%"}
                 height={"100vh"}
+                priority={true}
               />
             </Stack>
             <Stack
