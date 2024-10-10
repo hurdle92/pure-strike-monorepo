@@ -6,7 +6,11 @@ import {
 } from "~/types/componentProps";
 import { MouseEventHandler } from "~/types/events";
 
-export type FlexDirectionType = "column" | "row";
+export type FlexDirectionType =
+  | "row"
+  | "row-reverse"
+  | "column"
+  | "column-reverse";
 
 export type AxisAlignmentType =
   | "flex-start"
