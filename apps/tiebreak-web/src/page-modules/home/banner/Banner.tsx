@@ -31,7 +31,7 @@ export const Banner = () => {
                 direction={"column"}
               >
                 <ReactTyped
-                  strings={["테니스\n기록을\n즐겁게"]}
+                  strings={["테니스\n기록을\n즐겁게", "기록은\n성장의\n밑거름"]}
                   typeSpeed={70}
                   backSpeed={80}
                   startDelay={100}
@@ -92,7 +92,7 @@ export const Banner = () => {
                 direction={"column"}
               >
                 <ReactTyped
-                  strings={["테니스 기록을 즐겁게"]}
+                  strings={["테니스\n기록을\n즐겁게", "기록은\n성장의\n밑거름"]}
                   typeSpeed={70}
                   backSpeed={80}
                   startDelay={100}
