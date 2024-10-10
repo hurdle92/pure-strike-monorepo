@@ -26,7 +26,7 @@ export type FlexWrapType = "nowrap" | "wrap" | "wrap-reverse";
 interface FlexOptions {
   height?: string;
   direction?: ResponsiveStyleProps<FlexDirectionType>;
-  alignment?: AxisAlignmentType;
+  alignment?: ResponsiveStyleProps<AxisAlignmentType>;
   justify?: JustifyContentType;
   flexWrap?: FlexWrapType;
   gap?: ResponsiveStyleProps;

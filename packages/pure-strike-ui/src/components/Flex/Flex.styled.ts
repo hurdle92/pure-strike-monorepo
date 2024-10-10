@@ -8,12 +8,12 @@ export const Flex = styled.div<FlexProps>`
   height: ${(props) => props.height};
 
   justify-content: ${({ justify }) => justify};
-  align-items: ${({ alignment }) => alignment};
   flex-wrap: ${({ flexWrap }) => flexWrap};
   overflow: ${({ overflow }) => overflow};
 
   ${(props) => getResponsiveStyles("gap", props.gap)};
   ${(props) => getResponsiveStyles("flex-direction", props.direction)};
+  ${(props) => getResponsiveStyles("align-items", props.alignment)};
 
   cursor: ${({ cursor }) => cursor};
 `;
