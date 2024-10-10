@@ -44,7 +44,7 @@ export const FeatureItem = () => {
               <Stack width={["100%", "auto"]} style={{ overflowY: "hidden" }}>
                 <Stack width={["110%", "100%"]}>
                   <Flex
-                    style={{ overflowY: "scroll" }}
+                    style={{ overflowY: "hidden" }}
                     css={featureImgContainer}
                   >
                     <Spacer width={["40px", "0px"]} />
