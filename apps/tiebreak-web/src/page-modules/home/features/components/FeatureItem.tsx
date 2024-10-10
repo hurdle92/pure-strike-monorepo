@@ -1,6 +1,7 @@
 import { Flex, Spacer, Stack, Text } from "pure-strike-ui";
 import { InView } from "react-intersection-observer";
 import { Img } from "src/components/img";
+import { css } from "styled-components";
 
 export const FeatureItem = () => {
   return (
@@ -40,20 +41,23 @@ export const FeatureItem = () => {
                 </Text>
               </Stack>
               <Spacer width={["0px", "120px"]} height={["20px", "0"]} />
-              <Stack width={["100%", "auto"]} style={{ overflowY: "scroll" }}>
-                <Stack width={["140%", "100%"]}>
-                  <Flex overflow={"scroll"} style={{ overflowY: "hidden" }}>
+              <Stack width={["100%", "auto"]} style={{ overflowY: "hidden" }}>
+                <Stack width={["110%", "100%"]}>
+                  <Flex
+                    style={{ overflowY: "scroll" }}
+                    css={featureImgContainer}
+                  >
                     <Spacer width={["40px", "0px"]} />
                     <Img
                       src={"/images/home/features/diary/diary_1.png"}
-                      width={["220px", "260px"]}
-                      height={["450px", "534px"]}
+                      width={["50%", "260px"]}
+                      height={["auto", "534px"]}
                     />
                     <Spacer width={"20px"} />
                     <Img
                       src={"/images/home/features/diary/diary_2.png"}
-                      width={["220px", "260px"]}
-                      height={["450px", "534px"]}
+                      width={["50%", "260px"]}
+                      height={["auto", "534px"]}
                     />
                   </Flex>
                 </Stack>
@@ -66,3 +70,9 @@ export const FeatureItem = () => {
     </InView>
   );
 };
+
+const featureImgContainer = css`
+  ::-webkit-scrollbar {
+    display: none;
+  }
+`;
