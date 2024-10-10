@@ -60,6 +60,7 @@ export const Stack = forwardRef(
         cursor={cursor}
         opacity={opacity}
         aspectRatio={aspectRatio}
+        ref={forwardRef}
         {...rest}
       >
         {children}
