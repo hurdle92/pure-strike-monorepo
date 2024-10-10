@@ -9,7 +9,7 @@ import { css } from "styled-components";
 
 export const Banner = () => {
   return (
-    <Stack>
+    <Stack height={"100vh"}>
       <Responsive
         mobileComponent={
           <Stack position={"relative"}>
@@ -50,9 +50,9 @@ export const Banner = () => {
               <Stack
                 position={"absolute"}
                 bottom={"60px"}
-                width={"calc(100% - 40px)"}
+                width={"calc(100% - 32px)"}
                 margin={"0 auto"}
-                left={"20px"}
+                left={"16px"}
               >
                 <Link href={LITTLY_LINK} target={"_blank"}>
                   <Button text={"지금 다운받기"} borderRadius={"12px"} />
