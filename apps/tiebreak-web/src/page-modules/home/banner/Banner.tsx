@@ -3,6 +3,9 @@ import { Img } from "src/components/img";
 import { ReactTyped } from "react-typed";
 import Link from "next/link";
 import { LITTLY_LINK } from "src/constants/link";
+import { ChevronDown } from "lucide-react";
+import { Bounce } from "src/styles/keyframes";
+import { css } from "styled-components";
 
 export const Banner = () => {
   return (
@@ -16,6 +19,9 @@ export const Banner = () => {
                 width={"100%"}
                 height={"100vh"}
                 priority={true}
+                style={{
+                  filter: "brightness(90%)",
+                }}
               />
             </Stack>
             <Stack position={"absolute"} width={"100%"} height={"100vh"}>
@@ -24,23 +30,26 @@ export const Banner = () => {
                 alignment={"center"}
                 direction={"column"}
               >
-                <Text
-                  fontSize={"80px"}
-                  lineHeight={"96px"}
-                  color={"white"}
-                  fontWeight={"bold"}
-                  align={"center"}
-                >
-                  테니스
-                  <br />
-                  기록을
-                  <br />
-                  즐겁게
-                </Text>
+                <ReactTyped
+                  strings={["테니스\n기록을\n즐겁게"]}
+                  typeSpeed={70}
+                  backSpeed={80}
+                  startDelay={100}
+                  backDelay={2000}
+                  style={{
+                    color: "white",
+                    fontSize: "80px",
+                    fontWeight: "bold",
+                    whiteSpace: "pre-line",
+                    textAlign: "center",
+                  }}
+                  loop={true}
+                />
+                <Spacer height={"80px"} />
               </Flex>
               <Stack
                 position={"absolute"}
-                bottom={"40px"}
+                bottom={"60px"}
                 width={"calc(100% - 40px)"}
                 margin={"0 auto"}
                 left={"20px"}
@@ -48,6 +57,17 @@ export const Banner = () => {
                 <Link href={LITTLY_LINK} target={"_blank"}>
                   <Button text={"지금 다운받기"} borderRadius={"12px"} />
                 </Link>
+              </Stack>
+              <Stack position={"absolute"} bottom={"18px"} width={"100%"}>
+                <Flex justify={"center"}>
+                  <ChevronDown
+                    color={"white"}
+                    size={"30px"}
+                    css={css`
+                      animation: ${Bounce} 2s infinite ease-in-out;
+                    `}
+                  />
+                </Flex>
               </Stack>
             </Stack>
           </Stack>
@@ -61,7 +81,7 @@ export const Banner = () => {
                 height={"100vh"}
                 priority={true}
                 style={{
-                  filter: "brightness(90%)",
+                  filter: "brightness(80%)",
                 }}
               />
             </Stack>
