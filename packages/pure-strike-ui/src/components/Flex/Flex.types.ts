@@ -28,6 +28,7 @@ export type JustifyContentType =
 export type FlexWrapType = "nowrap" | "wrap" | "wrap-reverse";
 
 interface FlexOptions {
+  width?: string;
   height?: string;
   direction?: ResponsiveStyleProps<FlexDirectionType>;
   alignment?: ResponsiveStyleProps<AxisAlignmentType>;

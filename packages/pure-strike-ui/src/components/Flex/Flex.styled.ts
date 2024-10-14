@@ -5,6 +5,7 @@ import { FlexProps } from "./Flex.types";
 export const Flex = styled.div<FlexProps>`
   display: flex;
 
+  width: ${(props) => props.width};
   height: ${(props) => props.height};
 
   justify-content: ${({ justify }) => justify};

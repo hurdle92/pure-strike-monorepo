@@ -6,6 +6,7 @@ import { noop } from "~/utils/funtionUtils";
 export const Flex = forwardRef(
   (
     {
+      width = "100%",
       height = "100%",
       direction = "row",
       justify,
@@ -22,6 +23,7 @@ export const Flex = forwardRef(
   ) => {
     return (
       <Styled.Flex
+        width={width}
         height={height}
         direction={direction}
         justify={justify}
